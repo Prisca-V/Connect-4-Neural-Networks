@@ -34,7 +34,7 @@ db_schema:
     server: full
     title: Entries
 dependencies: []
-name: Connext
+name: Connect 4
 package_name: News_App
 renamed: true
 runtime_options:
