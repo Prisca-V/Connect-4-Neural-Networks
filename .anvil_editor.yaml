@@ -11,4 +11,4 @@ unique_ids:
   modules: {}
   scripts: {}
   server_modules:
-    ServerModule1: '1669297017291241838743870.52295'
+    bot_api: '1669297017291241838743870.52295'
