@@ -7,7 +7,7 @@ components:
   - {code: 'self.item[''title'']', property: text, writeback: true}
   layout_properties: {grid_position: 'YGGYWR,LEWIHF'}
   name: title_box
-  properties: {}
+  properties: {text: Connect 4}
   type: TextBox
 - layout_properties: {grid_position: 'ESBUON,LKKCYX'}
   name: label_2

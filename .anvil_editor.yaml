@@ -3,6 +3,7 @@ unique_ids:
     standard-page.html: ZJZJ5QIRYGBNKV2UF22CFMCG6IVAXZFB
     theme.css: AODQ72BOWB6KZMEX2CIJL5C4PBHWZTDN
   forms:
+    Connect4Form: '1770081909028637960000324.4474'
     EntryEdit: '1669200622439827529178778.553'
     EntryView: '1669300624421763057438685.8186'
     Homepage: NCYTHO2P7V27A7TV37YAWUGB52NDDGSI
@@ -11,4 +12,4 @@ unique_ids:
   modules: {}
   scripts: {}
   server_modules:
-    bot_api: '1669297017291241838743870.52295'
+    game_server: '1669297017291241838743870.52295'
