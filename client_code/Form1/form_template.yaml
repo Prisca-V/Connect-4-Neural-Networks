@@ -1,44 +1,45 @@
 components:
-- layout_properties: {grid_position: 'AVRHQV,NINBCB'}
+- components:
+  - layout_properties: {grid_position: 'PTZWHK,DLXFGB'}
+    name: label_1
+    properties: {align: center, text: Connect 4}
+    type: Label
+  - components:
+    - layout_properties: {}
+      name: button_1
+      properties: {role: elevated-button, text: ''}
+      type: Button
+    - layout_properties: {}
+      name: button_2
+      properties: {role: elevated-button, text: ''}
+      type: Button
+    - layout_properties: {}
+      name: button_3
+      properties: {role: elevated-button, text: ''}
+      type: Button
+    - layout_properties: {}
+      name: button_4
+      properties: {role: elevated-button, text: ''}
+      type: Button
+    - layout_properties: {}
+      name: button_5
+      properties: {role: elevated-button, text: ''}
+      type: Button
+    - layout_properties: {}
+      name: button_6
+      properties: {role: elevated-button, text: ''}
+      type: Button
+    - layout_properties: {}
+      name: button_7
+      properties: {role: elevated-button, text: ''}
+      type: Button
+    layout_properties: {grid_position: 'OFONFP,UELMDL'}
+    name: flow_panel_1
+    properties: {align: center}
+    type: FlowPanel
+  layout_properties: {grid_position: 'AVRHQV,NINBCB'}
   name: column_panel_1
   properties: {}
   type: ColumnPanel
-- layout_properties: {grid_position: 'VBEUXV,JHTQEY'}
-  name: label_1
-  properties: {align: center, text: Connect 4}
-  type: Label
-- components:
-  - layout_properties: {}
-    name: button_1
-    properties: {role: elevated-button, text: ''}
-    type: Button
-  - layout_properties: {}
-    name: button_2
-    properties: {role: elevated-button, text: ''}
-    type: Button
-  - layout_properties: {}
-    name: button_3
-    properties: {role: elevated-button, text: ''}
-    type: Button
-  - layout_properties: {}
-    name: button_4
-    properties: {role: elevated-button, text: ''}
-    type: Button
-  - layout_properties: {}
-    name: button_5
-    properties: {role: elevated-button, text: ''}
-    type: Button
-  - layout_properties: {}
-    name: button_6
-    properties: {role: elevated-button, text: ''}
-    type: Button
-  - layout_properties: {}
-    name: button_7
-    properties: {role: elevated-button, text: ''}
-    type: Button
-  layout_properties: {full_width_row: true, grid_position: 'PEEELI,GYXUEQ'}
-  name: flow_panel_1
-  properties: {}
-  type: FlowPanel
 container: {type: ColumnPanel}
 is_package: true
