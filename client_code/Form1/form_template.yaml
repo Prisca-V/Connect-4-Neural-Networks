@@ -39,35 +39,233 @@ components:
     type: FlowPanel
   - components:
     - components:
-      - layout_properties: {expand: false, width: 60}
-        name: label_2
-        properties: {background: '#918888', border: '50'}
-        type: Label
+      - layout_properties: {}
+        name: outlined_card_1
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_2
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_3
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_4
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_5
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_6
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_7
+        properties: {role: outlined-card}
+        type: ColumnPanel
       layout_properties: {grid_position: 'OWBMET,FNGQLO'}
       name: flow_panel_2
       properties: {}
       type: FlowPanel
-    - layout_properties: {grid_position: 'YRERIY,VTCQDH'}
+    - components:
+      - layout_properties: {}
+        name: outlined_card_8
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_9
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_10
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_11
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_12
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_13
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_14
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      layout_properties: {grid_position: 'YRERIY,VTCQDH'}
       name: flow_panel_3
       properties: {}
       type: FlowPanel
-    - layout_properties: {grid_position: 'TMBATA,RCDISY'}
+    - components:
+      - layout_properties: {}
+        name: outlined_card_15
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_16
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_17
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_18
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_19
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_20
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_21
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      layout_properties: {grid_position: 'TMBATA,RCDISY'}
       name: flow_panel_4
       properties: {}
       type: FlowPanel
-    - layout_properties: {grid_position: 'OJDLFK,KBLRNO'}
+    - components:
+      - layout_properties: {}
+        name: outlined_card_22
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_23
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_24
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_25
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_26
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_27
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_28
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      layout_properties: {grid_position: 'OJDLFK,KBLRNO'}
       name: flow_panel_5
       properties: {}
       type: FlowPanel
-    - layout_properties: {grid_position: 'FMAZMQ,RVHPMA'}
+    - components:
+      - layout_properties: {}
+        name: outlined_card_29
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_30
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_31
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_32
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_33
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_34
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_35
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      layout_properties: {grid_position: 'FMAZMQ,RVHPMA'}
       name: flow_panel_6
       properties: {}
       type: FlowPanel
-    - layout_properties: {grid_position: 'NHUYHL,AMRJFK'}
+    - components:
+      - layout_properties: {}
+        name: outlined_card_36
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_37
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_38
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_39
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_40
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_41
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_42
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      layout_properties: {grid_position: 'NHUYHL,AMRJFK'}
       name: flow_panel_7
       properties: {}
       type: FlowPanel
-    - layout_properties: {grid_position: 'STCZKK,ZITRDV'}
+    - components:
+      - layout_properties: {}
+        name: outlined_card_44
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_43
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_45
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_46
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_47
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_48
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - layout_properties: {}
+        name: outlined_card_49
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      layout_properties: {grid_position: 'STCZKK,ZITRDV'}
       name: flow_panel_8
       properties: {}
       type: FlowPanel
