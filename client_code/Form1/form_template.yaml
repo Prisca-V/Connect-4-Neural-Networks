@@ -5,27 +5,27 @@ components:
     properties: {align: center, text: Connect 4}
     type: Label
   - components:
-    - layout_properties: {expand: false, width: 50}
+    - layout_properties: {expand: true, width: 50}
       name: button_1
-      properties: {background: '#0a0a0a', border: '50', role: elevated-button, text: ''}
+      properties: {background: '#0a0a0a', border: '70', role: elevated-button, text: ''}
       type: Button
-    - layout_properties: {width: 50}
+    - layout_properties: {expand: true, width: 50}
       name: button_2
       properties: {background: '#121212', border: '50', role: elevated-button, text: ''}
       type: Button
-    - layout_properties: {width: 50}
+    - layout_properties: {expand: true, width: 50}
       name: button_3
       properties: {background: '#0a0a0a', border: '50', role: elevated-button, text: ''}
       type: Button
-    - layout_properties: {width: 50}
+    - layout_properties: {expand: true, width: 50}
       name: button_4
       properties: {background: '#0d0d0d', border: '50', role: elevated-button, text: ''}
       type: Button
-    - layout_properties: {width: 50}
+    - layout_properties: {expand: true, width: 50}
       name: button_5
       properties: {background: '#080808', border: '50', role: elevated-button, text: ''}
       type: Button
-    - layout_properties: {width: 50}
+    - layout_properties: {expand: true, width: 50}
       name: button_6
       properties: {background: '#121212', border: '50', role: elevated-button, text: ''}
       type: Button
