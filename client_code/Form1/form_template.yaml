@@ -1,5 +1,10 @@
 components:
 - components:
+  - event_bindings: {}
+    layout_properties: {grid_position: 'DYBOLH,JMDQRL'}
+    name: start_new_game
+    properties: {text: Start New Game}
+    type: Button
   - layout_properties: {grid_position: 'DYBOLH,MGSBAE'}
     name: label_2
     properties: {align: right, text: 'Game Mode:'}
