@@ -8,5 +8,4 @@ unique_ids:
     Homepage.ItemTemplate1: '1669137087735680125911714.4045'
   modules: {}
   scripts: {}
-  server_modules:
-    game_server: '1669297017291241838743870.52295'
+  server_modules: {}
