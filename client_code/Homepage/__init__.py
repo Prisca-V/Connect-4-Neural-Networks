@@ -1,15 +1,28 @@
 from ._anvil_designer import HomepageTemplate
 from anvil import *
+import anvil.users
 import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from ..EntryEdit import EntryEdit
-
+from anvil import alert
 class Homepage(HomepageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    user = anvil.users.get_user()
+    if not user:
+      anvil.users.login_with_form()
+      user = anvil.users.get_user()
+
+    if not user:
+      alert("You must sign in to access this page.")
+      self.content_panel.visible = False
+      return
+
+    # Logged in
+    self.content_panel.visible = True
     # Any code you write here will run when the form opens.
     self.refresh_entries()
       # Set an event handler on the RepeatingPanel (our 'entries_panel')
@@ -41,4 +54,11 @@ class Homepage(HomepageTemplate):
     anvil.server.call('delete_entry', entry)
     # Refresh entry to remove the deleted entry from the Homepage
     self.refresh_entries()
+
+  @handle("log_in", "click")
+  def log_in_click(self, **event_args):
+    anvil.users.login_with_form()
+    if anvil.users.get_user():
+      self.content_panel.visible = True
+    pass
 

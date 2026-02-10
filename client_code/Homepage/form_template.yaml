@@ -45,9 +45,14 @@ components:
     properties: {}
     type: LinearPanel
   layout_properties: {slot: default}
-  name: Home_Canvas
+  name: content_panel
   properties: {}
   type: ColumnPanel
+- event_bindings: {}
+  layout_properties: {slot: title}
+  name: log_in
+  properties: {text: Log In}
+  type: Button
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate

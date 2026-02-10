@@ -1,0 +1,29 @@
+components:
+- layout_properties: {grid_position: 'HEIWRM,ENJTPB'}
+  name: spacer_1
+  properties: {height: '150'}
+  type: Spacer
+- layout_properties: {grid_position: 'FVKITZ,HXEDYT'}
+  name: Title_Login
+  properties: {align: center, text: Log In}
+  type: Label
+- layout_properties: {grid_position: 'QNAGZL,JVUQBN GTQRPW,PYBUUT'}
+  name: Email_title
+  properties: {text: 'Email:'}
+  type: Label
+- layout_properties: {grid_position: 'QNAGZL,JVUQBN GUGSYT,WJRBOV'}
+  name: Password_title
+  properties: {text: 'Password:'}
+  type: Label
+- layout_properties: {grid_position: 'QNAGZL,UMJEKA HGDHIR,RQQOCZ'}
+  name: Email
+  properties: {}
+  type: TextBox
+- layout_properties: {grid_position: 'QNAGZL,UMJEKA AGDSZX,GKFITF'}
+  name: password
+  properties: {}
+  type: TextBox
+container:
+  properties: {col_widths: '{"JVUQBN":10,"UMJEKA":50}'}
+  type: ColumnPanel
+is_package: true
