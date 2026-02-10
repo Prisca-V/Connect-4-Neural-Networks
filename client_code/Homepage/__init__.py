@@ -24,9 +24,7 @@ class Homepage(HomepageTemplate):
     # Logged in
     self.content_panel.visible = True
     # Any code you write here will run when the form opens.
-    self.refresh_entries()
-      # Set an event handler on the RepeatingPanel (our 'entries_panel')
-    self.entries_panel.set_event_handler('x-delete-entry', self.delete_entry)
+  
 
   def add_entry_button_click(self, **event_args):
     """This method is called when the button is clicked"""
