@@ -1,7 +1,7 @@
 components: []
 container:
   properties:
-    html: |-
+    html: |
       <div class="app-shell-bg">
         <div class="login-center">
           <div class="login-card">
@@ -10,19 +10,9 @@ container:
             <div class="login-sub">Sign in to view the report and play Connect 4.</div>
 
             <div style="display:flex; flex-direction:column; gap:12px; margin-top:14px;">
-
-              <div class="login-input">
-                <div style="font-size:13px; font-weight:700; letter-spacing:.04em; margin-bottom:6px;">Email</div>
-                <anvil-text-box anvil-name="tb_email" placeholder="you@example.com"></anvil-text-box>
-              </div>
-
-              <div class="login-input" style="margin-top:10px;">
-                <div style="font-size:13px; font-weight:700; letter-spacing:.04em; margin-bottom:6px;">Password</div>
-                <anvil-text-box anvil-name="tb_password" hide-text="true" placeholder="••••••••"></anvil-text-box>
-              </div>
-
+              <anvil-text-box anvil-name="tb_email" placeholder="Email"></anvil-text-box>
+              <anvil-text-box anvil-name="tb_password" placeholder="Password" hide-text="True"></anvil-text-box>
               <anvil-button anvil-name="btn_login" class="btn-primary-cute">Log In</anvil-button>
-
             </div>
 
             <div class="divider"></div>
@@ -32,6 +22,7 @@ container:
 
           </div>
         </div>
-      </div>
+      </div>v>
   type: HtmlTemplate
+custom_component: false
 is_package: true
