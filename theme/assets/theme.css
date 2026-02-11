@@ -1492,3 +1492,23 @@ anvil-button.btn-primary-cute .btn,
 /* Debug (optional): if you STILL don't see them, uncomment this)
 .login-card input{ outline: 3px solid red !important; }
 */
+
+/* Login inputs: force visible + clickable in Custom HTML */
+.login-card anvil-text-box,
+.login-card .anvil-text-box {
+  display: block !important;
+  width: 100% !important;
+}
+
+.login-card anvil-text-box input,
+.login-card .anvil-text-box input,
+.login-card input.anvil-component {
+  width: 100% !important;
+  height: 44px !important;
+  padding: 10px 12px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(0,0,0,0.18) !important;
+  background: rgba(255,255,255,0.95) !important;
+  color: rgba(0,0,0,0.9) !important;
+  pointer-events: auto !important;
+}
