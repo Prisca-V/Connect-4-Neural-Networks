@@ -440,4 +440,5 @@ components:
 container:
   properties: {border: ''}
   type: ColumnPanel
+custom_component: false
 is_package: true

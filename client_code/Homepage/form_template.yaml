@@ -1,59 +1,65 @@
-components:
-- components:
-  - components:
-    - layout_properties: {}
-      name: label_1
-      properties: {text: Data Generation}
-      type: Label
-    - name: spacer_1
-      properties: {height: 32}
-      type: Spacer
-    - layout_properties: {}
-      name: rich_text_1
-      properties: {content: TEXT EXCERPT}
-      type: RichText
-    layout_properties: {grid_position: 'IBKSZC,NXMORG'}
-    name: Data_Generation
-    properties: {}
-    type: LinearPanel
-  - components:
-    - layout_properties: {}
-      name: label_2
-      properties: {text: Model Building}
-      type: Label
-    - name: spacer_2
-      properties: {height: 32}
-      type: Spacer
-    - layout_properties: {}
-      name: label_3
-      properties: {text: Convolutional Neural Network-CNN}
-      type: Label
-    - layout_properties: {}
-      name: rich_text_2
-      properties: {content: TEXT EXCEPRT}
-      type: RichText
-    - layout_properties: {}
-      name: label_4
-      properties: {text: Transformer Model}
-      type: Label
-    - layout_properties: {}
-      name: rich_text_3
-      properties: {content: TEXT EXCERPT}
-      type: RichText
-    layout_properties: {grid_position: 'QSTSNQ,QPROWN'}
-    name: Model_Building
-    properties: {}
-    type: LinearPanel
-  layout_properties: {slot: default}
-  name: content_panel
-  properties: {}
-  type: ColumnPanel
-- event_bindings: {}
-  layout_properties: {slot: title}
-  name: log_in
-  properties: {text: Log In}
-  type: Button
+components: []
 container:
-  properties: {html: '@theme:standard-page.html'}
+  properties:
+    html: |-
+      <div class="app-shell-bg">
+        <div class="page-wrap">
+          <div class="article-card">
+            <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:flex-end;">
+              <div>
+                <div class="hip-title">Model Report</div>
+                <div class="body-text">A medium-style writeup of training, results, and recommendations.</div>
+              </div>
+
+              <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+                <anvil-button anvil-name="btn_play" class="btn-primary-cute" text="Play Connect 4"></anvil-button>
+                <anvil-button anvil-name="log_in" class="btn-cute" text="Sign in"></anvil-button>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Content panel you already use in Python -->
+            <anvil-panel anvil-name="content_panel">
+              <div class="section-title">Overview</div>
+              <div class="body-text">
+                <anvil-rich-text anvil-name="rt_overview"></anvil-rich-text>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="section-title">Model Training</div>
+              <div class="body-text">
+                <anvil-rich-text anvil-name="rt_training"></anvil-rich-text>
+              </div>
+
+              <div style="margin-top:14px;">
+                <div class="section-title" style="margin-top:0;">Training Images</div>
+                <div class="body-text" style="margin-bottom:10px;">Drop figures/screenshots here.</div>
+
+                <!-- Image slots -->
+                <div style="display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px;">
+                  <anvil-image anvil-name="img_train_1" style="width:100%; border-radius:14px; border:1px solid rgba(0,0,0,0.12); box-shadow: var(--shadow-soft);"></anvil-image>
+                  <anvil-image anvil-name="img_train_2" style="width:100%; border-radius:14px; border:1px solid rgba(0,0,0,0.12); box-shadow: var(--shadow-soft);"></anvil-image>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="section-title">Entries</div>
+              <div class="body-text" style="margin-bottom:10px;">
+                Add notes/observations here.
+              </div>
+
+              <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
+                <anvil-button anvil-name="add_entry_button" class="btn-cute" text="Add Entry"></anvil-button>
+                <anvil-button anvil-name="btn_refresh" class="btn-cute" text="Refresh"></anvil-button>
+              </div>
+
+              <anvil-repeating-panel anvil-name="entries_panel"></anvil-repeating-panel>
+            </anvil-panel>
+          </div>
+        </div>
+      </div>
   type: HtmlTemplate
 is_package: true

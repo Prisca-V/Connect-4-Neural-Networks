@@ -66,6 +66,7 @@ runtime_options:
   server_spec_disabled: {base: python310-minimal, requirements: ''}
   server_version: python3-sandbox
   version: 2
+secrets: null
 services:
 - client_config: {}
   server_config: {}
@@ -73,6 +74,6 @@ services:
 - client_config: {allow_signup: false, confirm_email: false, enable_automatically: true, use_email: true}
   server_config: {user_table: users}
   source: /runtime/services/anvil/users.yml
-startup: {module: Form1, type: form}
+startup: {module: GamePage, type: form}
 startup_form: null
 uplink_visible: true

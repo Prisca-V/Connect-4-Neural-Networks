@@ -1,0 +1,69 @@
+components: []
+container:
+  properties:
+    html: |
+      <div class="app-shell-bg tabletop">
+        <div class="game-wrap">
+
+          <div class="connect4-title">Connect 4</div>
+
+          <div class="game-controls">
+
+            <div style="display:flex; flex-direction:column; gap:4px; align-items:flex-start;">
+              <div style="font-size:13px; font-weight:700; letter-spacing:.04em;">
+                Game Mode
+              </div>
+              <anvil-drop-down anvil-name="game_mode_dropdown"
+                placeholder="Select Game Mode"
+                style="min-width:180px;"></anvil-drop-down>
+            </div>
+
+            <anvil-button anvil-name="start_new_game"
+              class="btn-primary-cute"
+              text="Start New Game"></anvil-button>
+
+            <anvil-button anvil-name="btn_back_home"
+              class="btn-cute"
+              text="Back to Report"></anvil-button>
+
+            <anvil-button anvil-name="test_health"
+              class="btn-cute"
+              text="Test Backend"></anvil-button>
+          </div>
+
+          <div class="board-stage">
+            <div class="board-shell">
+
+              <!-- Column buttons -->
+              <div class="col-select-row">
+                <anvil-button anvil-name="button_1" class="col-dot"></anvil-button>
+                <anvil-button anvil-name="button_2" class="col-dot"></anvil-button>
+                <anvil-button anvil-name="button_3" class="col-dot"></anvil-button>
+                <anvil-button anvil-name="button_4" class="col-dot"></anvil-button>
+                <anvil-button anvil-name="button_5" class="col-dot"></anvil-button>
+                <anvil-button anvil-name="button_6" class="col-dot"></anvil-button>
+                <anvil-button anvil-name="button_7" class="col-dot"></anvil-button>
+              </div>
+
+              <!-- Board grid -->
+              <div class="board-grid">
+                <div anvil-name="cell_0_0" class="cell"></div><div anvil-name="cell_0_1" class="cell"></div><div anvil-name="cell_0_2" class="cell"></div><div anvil-name="cell_0_3" class="cell"></div><div anvil-name="cell_0_4" class="cell"></div><div anvil-name="cell_0_5" class="cell"></div><div anvil-name="cell_0_6" class="cell"></div>
+
+                <div anvil-name="cell_1_0" class="cell"></div><div anvil-name="cell_1_1" class="cell"></div><div anvil-name="cell_1_2" class="cell"></div><div anvil-name="cell_1_3" class="cell"></div><div anvil-name="cell_1_4" class="cell"></div><div anvil-name="cell_1_5" class="cell"></div><div anvil-name="cell_1_6" class="cell"></div>
+
+                <div anvil-name="cell_2_0" class="cell"></div><div anvil-name="cell_2_1" class="cell"></div><div anvil-name="cell_2_2" class="cell"></div><div anvil-name="cell_2_3" class="cell"></div><div anvil-name="cell_2_4" class="cell"></div><div anvil-name="cell_2_5" class="cell"></div><div anvil-name="cell_2_6" class="cell"></div>
+
+                <div anvil-name="cell_3_0" class="cell"></div><div anvil-name="cell_3_1" class="cell"></div><div anvil-name="cell_3_2" class="cell"></div><div anvil-name="cell_3_3" class="cell"></div><div anvil-name="cell_3_4" class="cell"></div><div anvil-name="cell_3_5" class="cell"></div><div anvil-name="cell_3_6" class="cell"></div>
+
+                <div anvil-name="cell_4_0" class="cell"></div><div anvil-name="cell_4_1" class="cell"></div><div anvil-name="cell_4_2" class="cell"></div><div anvil-name="cell_4_3" class="cell"></div><div anvil-name="cell_4_4" class="cell"></div><div anvil-name="cell_4_5" class="cell"></div><div anvil-name="cell_4_6" class="cell"></div>
+
+                <div anvil-name="cell_5_0" class="cell"></div><div anvil-name="cell_5_1" class="cell"></div><div anvil-name="cell_5_2" class="cell"></div><div anvil-name="cell_5_3" class="cell"></div><div anvil-name="cell_5_4" class="cell"></div><div anvil-name="cell_5_5" class="cell"></div><div anvil-name="cell_5_6" class="cell"></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+  type: HtmlTemplate
+is_package: true
