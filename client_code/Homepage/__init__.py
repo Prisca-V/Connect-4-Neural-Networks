@@ -11,12 +11,8 @@ class Homepage(HomepageTemplate):
 
     user = anvil.users.get_user()
     if not user:
-      anvil.users.login_with_form()
-      user = anvil.users.get_user()
-
-    if not user:
       alert("You must sign in to access this page.")
-      self.content_panel.visible = False
+      open_form("LoginPage")
       return
 
     self.content_panel.visible = True

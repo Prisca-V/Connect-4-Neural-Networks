@@ -1428,3 +1428,43 @@ anvil-button.btn-primary-cute .btn,
 .anvil-dropdown form:before{
   content: "" !important;
 }
+
+/* --- Fix Anvil TextBox visibility/typing in Custom HTML --- */
+.login-card anvil-text-box,
+.login-card .anvil-text-box{
+  display: block !important;
+  width: 100% !important;
+}
+
+/* Target the actual <input> Anvil renders */
+.login-card anvil-text-box input,
+.login-card .anvil-text-box input,
+.login-card input.anvil-component{
+  width: 100% !important;
+  height: 44px !important;
+  padding: 10px 12px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(0,0,0,0.18) !important;
+  background: rgba(255,255,255,0.95) !important;
+  color: rgba(0,0,0,0.90) !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.08) !important;
+  outline: none !important;
+}
+
+/* Make sure the input is clickable */
+.login-card anvil-text-box,
+.login-card .anvil-text-box,
+.login-card anvil-text-box input,
+.login-card .anvil-text-box input{
+  pointer-events: auto !important;
+}
+
+/* Focus state */
+.login-card anvil-text-box input:focus,
+.login-card .anvil-text-box input:focus,
+.login-card input.anvil-component:focus{
+  border: 2px solid rgba(60,110,113,0.75) !important;
+  box-shadow: 0 14px 22px rgba(60,110,113,0.20) !important;
+}

@@ -11,9 +11,17 @@ class LoginPage(LoginPageTemplate):
       open_form("Homepage")
 
   def btn_login_click(self, **event_args):
-    anvil.users.login_with_form()
-    if anvil.users.get_user():
-      open_form("Homepage")
+    email = (self.tb_email.text or "").strip()
+    password = self.tb_password.text or ""
+pASSWORD
+    if not email or not password:
+      alert("Enter your email and password.")
+      return
 
-  def btn_go_home_click(self, **event_args):
+    try:
+      anvil.users.login_with_email(email, password)
+    except Exception:
+      alert("Login failed. Check your email/password and try again.")
+      return
+
     open_form("Homepage")

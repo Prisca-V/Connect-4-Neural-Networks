@@ -1,22 +1,35 @@
 components: []
 container:
   properties:
-    html: |
-      <div class="app-shell-bg login-center">
-        <div class="login-card">
-          <div class="login-title">Welcome</div>
-          <div class="login-sub">
-            Sign in to view the report and play Connect 4.
-          </div>
+    html: |-
+      <div class="app-shell-bg">
+        <div class="login-center">
+          <div class="login-card">
 
-          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-            <anvil-button anvil-name="btn_login" class="btn-primary-cute">Sign in</anvil-button>
-            <anvil-button anvil-name="btn_go_home" class="btn-cute">Go to Homepage</anvil-button>
-          </div>
+            <div class="login-title">Welcome</div>
+            <div class="login-sub">Sign in to view the report and play Connect 4.</div>
 
-          <div class="divider"></div>
-          <div class="body-text">
-            User access is managed via Anvil Users. (You’ve already created Dan.)
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:14px;">
+
+              <div class="login-input">
+                <div style="font-size:13px; font-weight:700; letter-spacing:.04em; margin-bottom:6px;">Email</div>
+                <anvil-text-box anvil-name="tb_email" placeholder="you@example.com"></anvil-text-box>
+              </div>
+
+              <div class="login-input" style="margin-top:10px;">
+                <div style="font-size:13px; font-weight:700; letter-spacing:.04em; margin-bottom:6px;">Password</div>
+                <anvil-text-box anvil-name="tb_password" hide-text="true" placeholder="••••••••"></anvil-text-box>
+              </div>
+
+              <anvil-button anvil-name="btn_login" class="btn-primary-cute">Log In</anvil-button>
+
+            </div>
+
+            <div class="divider"></div>
+            <div class="body-text" style="font-size:13px;">
+              User access is managed via Anvil Users.
+            </div>
+
           </div>
         </div>
       </div>
