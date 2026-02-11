@@ -1,40 +1,13 @@
-components: []
+components:
+- layout_properties: {slot: default}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
 container:
-  properties:
-    html: |-
-      <div class="app-shell-bg">
-        <div class="login-center">
-          <div class="login-card">
-
-            <div class="login-title">Welcome</div>
-            <div class="login-sub">Sign in to view the report and play Connect 4.</div>
-
-            <div style="display:flex; flex-direction:column; gap:12px; margin-top:14px;">
-
-              <div class="login-input">
-                <div style="font-size:13px; font-weight:700; letter-spacing:.04em; margin-bottom:6px;">Email</div>
-                <anvil-slot name="email_slot"></anvil-slot>
-              </div>
-
-              <div class="login-input" style="margin-top:10px;">
-                <div style="font-size:13px; font-weight:700; letter-spacing:.04em; margin-bottom:6px;">Password</div>
-                <anvil-slot name="password_slot"></anvil-slot>
-              </div>
-
-              <anvil-slot name="login_button_slot"></anvil-slot>
-
-            </div>
-
-            <div class="divider"></div>
-            <div class="body-text" style="font-size:13px;">
-              User access is managed via Anvil Users.
-            </div>
-
-          </div>
-        </div>
-      </div>
+  properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
 custom_component: true
 custom_component_container: true
 is_package: true
-properties: []
+properties:
+- {default_binding_prop: true, important: true, name: prop, type: form}
