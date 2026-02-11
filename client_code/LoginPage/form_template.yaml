@@ -10,8 +10,8 @@ container:
           </div>
 
           <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-            <anvil-button anvil-name="btn_login" class="btn-primary-cute" text="Sign in"></anvil-button>
-            <anvil-button anvil-name="btn_go_home" class="btn-cute" text="Go to Homepage"></anvil-button>
+            <anvil-button anvil-name="btn_login" class="btn-primary-cute">Sign in</anvil-button>
+            <anvil-button anvil-name="btn_go_home" class="btn-cute">Go to Homepage</anvil-button>
           </div>
 
           <div class="divider"></div>

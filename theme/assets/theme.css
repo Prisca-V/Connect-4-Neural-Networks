@@ -1339,3 +1339,92 @@ anvil-drop-down select,
   box-shadow: 0 10px 18px rgba(0,0,0,0.10) !important;
   appearance: auto !important;
 }
+
+/* Hard override for Anvil DropDown so it renders as a real dropdown */
+.anvil-dropdown select.form-control{
+  width: 100% !important;
+  height: 42px !important;
+  padding: 8px 12px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(0,0,0,0.18) !important;
+  background: rgba(255,255,255,0.92) !important;
+  color: rgba(0,0,0,0.9) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.10) !important;
+
+  /* Put the native dropdown behavior back */
+  -webkit-appearance: auto !important;
+  -moz-appearance: auto !important;
+  appearance: auto !important;
+}
+
+/* Make custom classes style the REAL Anvil button element inside <anvil-button> */
+anvil-button.btn-cute .btn,
+.btn-cute .btn{
+  border-radius: 16px !important;
+  padding: 10px 14px !important;
+  font-weight: 700 !important;
+  border: 1px solid rgba(0,0,0,0.14) !important;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.10) !important;
+  background: rgba(255,255,255,0.92) !important;
+  color: rgba(0,0,0,0.9) !important;
+  min-height: 42px !important;
+}
+
+anvil-button.btn-primary-cute .btn,
+.btn-primary-cute .btn{
+  border-radius: 16px !important;
+  padding: 10px 14px !important;
+  font-weight: 800 !important;
+  border: 1px solid rgba(0,0,0,0.14) !important;
+  background: #3c6e71 !important;
+  color: #fff !important;
+  box-shadow: 0 12px 22px rgba(60,110,113,0.28) !important;
+  min-height: 42px !important;
+}
+
+/* Make Anvil dropdown usable + sized consistently */
+.anvil-dropdown{
+  display: inline-block !important;
+}
+
+.anvil-dropdown select.form-control{
+  min-width: 200px !important;
+  height: 42px !important;
+  padding: 8px 12px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(0,0,0,0.18) !important;
+  background: rgba(255,255,255,0.92) !important;
+  color: rgba(0,0,0,0.9) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.10) !important;
+
+  -webkit-appearance: auto !important;
+  -moz-appearance: auto !important;
+  appearance: auto !important;
+}
+
+/* Turn off the theme's custom arrow (it misplaces things in Custom HTML) */
+.anvil-dropdown form:before{
+  content: "" !important;
+}
+/* Make dropdown visible and sized (overrides Material theme) */
+.anvil-dropdown select.form-control{
+  min-width: 200px !important;
+  height: 42px !important;
+  padding: 8px 12px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(0,0,0,0.18) !important;
+  background: rgba(255,255,255,0.92) !important;
+  color: rgba(0,0,0,0.9) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.10) !important;
+  -webkit-appearance: auto !important;
+  -moz-appearance: auto !important;
+  appearance: auto !important;
+}
+
+/* Disable the theme's custom select arrow (it breaks layout in Custom HTML) */
+.anvil-dropdown form:before{
+  content: "" !important;
+}

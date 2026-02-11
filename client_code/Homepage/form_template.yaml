@@ -12,8 +12,8 @@ container:
               </div>
 
               <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-                <anvil-button anvil-name="btn_play" class="btn-primary-cute" text="Play Connect 4"></anvil-button>
-                <anvil-button anvil-name="log_in" class="btn-cute" text="Sign in"></anvil-button>
+                <anvil-button anvil-name="btn_play" class="btn-primary-cute">Play Connect 4</anvil-button>
+                <anvil-button anvil-name="log_in" class="btn-cute">Sign in</anvil-button>
               </div>
             </div>
 
@@ -52,8 +52,8 @@ container:
               </div>
 
               <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
-                <anvil-button anvil-name="add_entry_button" class="btn-cute" text="Add Entry"></anvil-button>
-                <anvil-button anvil-name="btn_refresh" class="btn-cute" text="Refresh"></anvil-button>
+                <anvil-button anvil-name="add_entry_button" class="btn-cute">Add Entry</anvil-button>
+                <anvil-button anvil-name="btn_refresh" class="btn-cute">Refresh</anvil-button>
               </div>
 
               <anvil-repeating-panel anvil-name="entries_panel"></anvil-repeating-panel>

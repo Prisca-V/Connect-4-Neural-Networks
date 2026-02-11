@@ -17,18 +17,9 @@ container:
                 placeholder="Select Game Mode"
                 style="min-width:180px;"></anvil-drop-down>
             </div>
-
-            <anvil-button anvil-name="start_new_game"
-              class="btn-primary-cute"
-              text="Start New Game"></anvil-button>
-
-            <anvil-button anvil-name="btn_back_home"
-              class="btn-cute"
-              text="Back to Report"></anvil-button>
-
-            <anvil-button anvil-name="test_health"
-              class="btn-cute"
-              text="Test Backend"></anvil-button>
+            <anvil-button anvil-name="start_new_game" class="btn-primary-cute">Start New Game</anvil-button>
+            <anvil-button anvil-name="btn_back_home" class="btn-cute">Back to Report</anvil-button>
+            <anvil-button anvil-name="test_health" class="btn-cute">Test Backend</anvil-button>
           </div>
 
           <div class="board-stage">
