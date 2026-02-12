@@ -8,7 +8,7 @@ class GamePage(GamePageTemplate):
     self.init_components(**properties)
 
     # Dropdown options
-    self.game_mode_dropdown.items = ["CNN", "Transformer"]
+    self.game_mode = "cnn"
 
     # Build 6x7 cell grid
     self.cells = [[getattr(self, f"cell_{r}_{c}") for c in range(7)] for r in range(6)]

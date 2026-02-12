@@ -5,20 +5,18 @@ import anvil.users
 
 
 class LoginPage(LoginPageTemplate):
+  def __init__(self, **properties):
+    self.init_components(**properties)
 
   def login_click(self, **event_args):
-    email = self.get_dom_node().querySelector("#login_email").value.strip()
-    password = self.get_dom_node().querySelector("#login_password").value
+    print("LOGIN BUTTON CLICKED")  # this WILL show in Running App Console
 
-    err = self.get_dom_node().querySelector("#login_error")
-    if err:
-      err.style.display = "none"
+    email = (self.email_box.text or "").strip()
+    password = self.password_box.text or ""
 
     try:
       anvil.server.call('login_email_password', email, password)
       open_form('Homepage')
-    except Exception:
-      if err:
-        err.style.display = "block"
-      else:
-        alert("Invalid email or password. Please try again.")
+    except Exception as e:
+      alert("Invalid email or password. Please try again.")
+      print("Login error:", e)

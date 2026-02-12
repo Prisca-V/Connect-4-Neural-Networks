@@ -1148,7 +1148,11 @@ GLOBAL THEME
 /* =========================
 LOGIN PAGE
 ========================= */
-
+.login-btn {
+  position: relative;
+  z-index: 9999;
+  pointer-events: auto;
+}
 .login-center{
   min-height: 100vh;
   display: flex;
@@ -1261,6 +1265,7 @@ GAME PAGE (Connect 4)
   border: 1px solid rgba(0,0,0,0.18);
   border-radius: 0 0 18px 18px;
   box-shadow: 0 10px 16px rgba(0,0,0,0.18);
+  pointer-events: none;   /* <-- ADD THIS LINE */
 }
 .board-shell:before{ left: 52px; }
 .board-shell:after{ right: 52px; }
