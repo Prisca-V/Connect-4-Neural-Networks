@@ -1512,3 +1512,54 @@ anvil-button.btn-primary-cute .btn,
   color: rgba(0,0,0,0.9) !important;
   pointer-events: auto !important;
 }
+
+/* ===== SIMPLE, GUARANTEED-TYPABLE LOGIN INPUTS (plain HTML) ===== */
+.login-card .login-label{
+  display:block;
+  margin: 12px 0 6px;
+  font-weight: 700;
+  color: rgba(0,0,0,0.75);
+}
+
+.login-card .login-input{
+  display:block;
+  width:100%;
+  height:44px;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,0.18);
+  background: rgba(255,255,255,0.98);
+  color: rgba(0,0,0,0.90);
+  font-size: 15px;
+  line-height: 22px;
+
+  /* the “it must be clickable/typeable” bits */
+  pointer-events: auto;
+  user-select: text;
+  opacity: 1;
+  visibility: visible;
+
+  /* avoid weird overlays */
+  position: relative;
+  z-index: 2;
+}
+
+.login-card .login-input:focus{
+  outline:none;
+  border:2px solid rgba(60,110,113,0.75);
+  box-shadow: 0 14px 22px rgba(60,110,113,0.20);
+}
+
+.login-card .login-btn{
+  margin-top: 16px;
+  width:100%;
+  height:44px;
+  border-radius:14px;
+  border: 1px solid rgba(0,0,0,0.14);
+  background: #3c6e71;
+  color: #fff;
+  font-weight: 800;
+}
+.login-card .login-btn:hover{
+  filter: brightness(0.97);
+}

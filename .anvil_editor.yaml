@@ -8,4 +8,5 @@ unique_ids:
     LoginPage: '1770792092013995892790532.9061'
   modules: {}
   scripts: {}
-  server_modules: {}
+  server_modules:
+    ServerModule1: '1770873958983130089108962.88773'

@@ -1,26 +1,24 @@
 from ._anvil_designer import LoginPageTemplate
 from anvil import *
+import anvil.server
 import anvil.users
 
+
 class LoginPage(LoginPageTemplate):
-  def __init__(self, **properties):
-    self.init_components(**properties)
 
-    if anvil.users.get_user():
-      open_form("Homepage")
+  def login_click(self, **event_args):
+    email = self.get_dom_node().querySelector("#login_email").value.strip()
+    password = self.get_dom_node().querySelector("#login_password").value
 
-  def btn_login_click(self, **event_args):
-    email = (self.tb_email.text or "").strip()
-    password = self.tb_password.text or ""
-
-    if not email or not password:
-      alert("Enter your email and password.")
-      return
+    err = self.get_dom_node().querySelector("#login_error")
+    if err:
+      err.style.display = "none"
 
     try:
-      anvil.users.login_with_email(email, password)
+      anvil.server.call('login_email_password', email, password)
+      open_form('Homepage')
     except Exception:
-      alert("Login failed. Check your email/password and try again.")
-      return
-
-    open_form("Homepage")
+      if err:
+        err.style.display = "block"
+      else:
+        alert("Invalid email or password. Please try again.")

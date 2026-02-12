@@ -1,12 +1,54 @@
 components:
-- layout_properties: {slot: default}
+- components:
+  - layout_properties: {full_width_row: false, grid_position: 'AMMJUL,BRCBWH'}
+    name: text_area_1
+    properties: {role: input-error, text: ''}
+    type: TextArea
+  - layout_properties: {grid_position: 'DXHLYU,STMOJB'}
+    name: text_box_1
+    properties: {}
+    type: TextBox
+  layout_properties: {slot: default}
   name: column_panel_1
-  properties: {}
+  properties: {role: elevated-card}
   type: ColumnPanel
 container:
-  properties: {html: '@theme:standard-page.html'}
+  properties:
+    html: |-
+      <div class="app-shell-bg login-center">
+        <div class="login-card">
+          <h1 class="login-title">Log in</h1>
+          <p class="login-sub">Enter your email and password.</p>
+
+          <label class="login-label" for="login_email">Email</label>
+          <input
+            id="login_email"
+            class="login-input"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+            />
+
+          <label class="login-label" for="login_password">Password</label>
+          <input
+            id="login_password"
+            class="login-input"
+            type="password"
+            placeholder="••••••••"
+            autocomplete="current-password"
+            />
+
+          <button class="login-btn" type="button" id="login_btn" anvil-on-click="login_click">
+            Log in
+          </button>
+
+          <p id="login_error" style="color:red; display:none; margin-top:10px;">
+            Invalid email or password. Please try again.
+          </p>
+        </div>
+      </div>
   type: HtmlTemplate
-custom_component: true
+custom_component: false
 custom_component_container: true
 is_package: true
 properties:
