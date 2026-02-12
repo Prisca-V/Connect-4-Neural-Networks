@@ -23,7 +23,6 @@ class Form1(Form1Template):
     # Draw initial empty board
     self.render_board()
 
-
   # =========================
   # UI EVENTS
   # =========================
@@ -31,7 +30,6 @@ class Form1(Form1Template):
   @handle("game_mode_dropdown", "change")
   def game_mode_dropdown_change(self, **event_args):
     self.game_mode = self.game_mode_dropdown.selected_value
-
 
   @handle("start_new_game", "click")
   def start_new_game_click(self, **event_args):
@@ -52,29 +50,33 @@ class Form1(Form1Template):
     self.render_board()
     alert("New game started!")
 
-
   @handle("button_1", "click")
   def button_1_click(self, **event_args):
     self.play_column(0)
 
+  @handle("button_2", "click")
   def button_2_click(self, **event_args):
     self.play_column(1)
 
+  @handle("button_3", "click")
   def button_3_click(self, **event_args):
     self.play_column(2)
 
+  @handle("button_4", "click")
   def button_4_click(self, **event_args):
     self.play_column(3)
 
+  @handle("button_5", "click")
   def button_5_click(self, **event_args):
     self.play_column(4)
 
+  @handle("button_6", "click")
   def button_6_click(self, **event_args):
     self.play_column(5)
 
+  @handle("button_7", "click")
   def button_7_click(self, **event_args):
     self.play_column(6)
-
 
   # =========================
   # BOARD MAPPING + RENDERING
@@ -91,7 +93,6 @@ class Form1(Form1Template):
     cards.sort(key=lambda x: x[0])
     return [c for _, c in cards]
 
-
   def init_board_cells(self):
     cards = self._collect_outlined_cards()
 
@@ -107,7 +108,6 @@ class Form1(Form1Template):
         idx += 1
       self.cells.append(row)
 
-
   def render_board(self):
     for r in range(6):
       for c in range(7):
@@ -121,7 +121,6 @@ class Form1(Form1Template):
         elif v == 2:
           cell.background = "#ffd24d"   # bot
 
-
   # =========================
   # GAMEPLAY
   # =========================
@@ -132,7 +131,6 @@ class Form1(Form1Template):
         self.board_game[r][col] = player
         return r
     return None
-
 
   def play_column(self, col):
     if not self.game_mode:
@@ -146,6 +144,11 @@ class Form1(Form1Template):
       return
 
     self.render_board()
+
+    # 🔎 DEBUG: print board being sent to bot
+    print("Board being sent to bot:")
+    for row in self.board_game:
+      print(row)
 
     # Bot move (Docker uplink)
     try:
@@ -164,12 +167,10 @@ class Form1(Form1Template):
 
   @handle("outlined_1", "pressed_enter")
   def outlined_1_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
     pass
 
   @handle("test_health", "pressed_enter")
   def test_health_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
     pass
 
   @handle("test_health", "click")
@@ -183,4 +184,3 @@ class Form1(Form1Template):
       )
     except Exception as e:
       alert(f"❌ Backend NOT reachable:\n{e}")
-    pass

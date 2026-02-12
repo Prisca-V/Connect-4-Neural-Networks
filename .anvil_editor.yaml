@@ -8,4 +8,5 @@ unique_ids:
     Homepage: NCYTHO2P7V27A7TV37YAWUGB52NDDGSI
   modules: {}
   scripts: {}
-  server_modules: {}
+  server_modules:
+    ServerModule1: '1770886033408626299252962.3583'
