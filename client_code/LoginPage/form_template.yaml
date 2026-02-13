@@ -36,6 +36,6 @@ components:
   properties: {text: 'Created By: Shruthi, Prisca, Sam, Christian'}
   type: Label
 container:
-  properties: {col_widths: '{"JVUQBN":10,"UMJEKA":50}'}
+  properties: {col_widths: '{"JVUQBN":10,"UMJEKA":50}', role: null}
   type: ColumnPanel
 is_package: true

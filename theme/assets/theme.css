@@ -1046,3 +1046,108 @@ div.plot-container.plotly svg.main-svg {
   box-shadow: 0px 0px 100px 100px %color:Surface Variant%;
 }
 
+/* --- Global vibe tokens --- */
+:root{
+  --bg-1: #e7fbff;      /* very light aqua */
+  --bg-2: #d7f3f6;      /* soft teal wash */
+  --vignette: rgba(0, 128, 140, 0.18);
+  --text: #0f172a;      /* slate-ish */
+  --muted: rgba(15,23,42,0.65);
+  --card: rgba(255,255,255,0.72);
+  --stroke: rgba(15,23,42,0.10);
+  --shadow: 0 12px 32px rgba(15,23,42,0.10);
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+}
+
+/* --- Page background (teal vignette) --- */
+.anvil-role-page{
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 600px at 20% 15%, var(--vignette), transparent 60%),
+    radial-gradient(700px 500px at 85% 20%, rgba(0, 180, 190, 0.14), transparent 55%),
+    radial-gradient(700px 500px at 55% 90%, rgba(0, 160, 175, 0.12), transparent 60%),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  color: var(--text);
+}
+/* --- Global vibe tokens --- */
+:root{
+  --bg-1: #e7fbff;      /* very light aqua */
+  --bg-2: #d7f3f6;      /* soft teal wash */
+  --vignette: rgba(0, 128, 140, 0.18);
+  --text: #0f172a;      /* slate-ish */
+  --muted: rgba(15,23,42,0.65);
+  --card: rgba(255,255,255,0.72);
+  --stroke: rgba(15,23,42,0.10);
+  --shadow: 0 12px 32px rgba(15,23,42,0.10);
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+}
+
+/* --- Page background (teal vignette) --- */
+.anvil-role-page{
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 600px at 20% 15%, var(--vignette), transparent 60%),
+    radial-gradient(700px 500px at 85% 20%, rgba(0, 180, 190, 0.14), transparent 55%),
+    radial-gradient(700px 500px at 55% 90%, rgba(0, 160, 175, 0.12), transparent 60%),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  color: var(--text);
+}
+
+.anvil-role-card{
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 18px 18px;
+  backdrop-filter: blur(8px);
+}
+
+/* Inputs */
+.anvil-role-input input{
+  border-radius: 999px !important;
+  border: 1px solid var(--stroke) !important;
+  padding: 12px 14px !important;
+  background: rgba(255,255,255,0.85) !important;
+}
+.anvil-role-input input:focus{
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(0,180,190,0.18) !important;
+}
+
+/* Primary button */
+.anvil-role-primary-btn{
+  border-radius: 999px !important;
+  padding: 10px 16px !important;
+  border: 1px solid rgba(0, 180, 190, 0.35) !important;
+  background: linear-gradient(135deg, rgba(0,180,190,0.95), rgba(0,128,140,0.95)) !important;
+  box-shadow: 0 10px 22px rgba(0, 120, 130, 0.20) !important;
+}
+.anvil-role-primary-btn:hover{
+  transform: translateY(-1px);
+}
+
+/* Ghost/secondary button */
+.anvil-role-ghost-btn{
+  border-radius: 999px !important;
+  background: rgba(255,255,255,0.55) !important;
+  border: 1px solid var(--stroke) !important;
+}
+body, .anvil-container{
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+.anvil-label{
+  letter-spacing: 0.2px;
+}
+
+.anvil-role-chip{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(15,23,42,0.12);
+  background: rgba(255,255,255,0.75);
+  box-shadow: 0 8px 16px rgba(15,23,42,0.08);
+}
