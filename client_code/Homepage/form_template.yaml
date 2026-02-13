@@ -1,12 +1,15 @@
 components:
 - components:
   - components:
+    - name: label_1
+      properties: {}
+      type: Label
     - layout_properties: {}
       name: lbl_dataGen
-      properties: {text: Data Generation}
+      properties: {role: headline, text: Data Generation}
       type: Label
-    - name: rich_text_1
-      properties: {content: TEXT EXCERPT}
+    - name: data_den_text
+      properties: {}
       type: RichText
     - name: spacer_1
       properties: {height: 32}
@@ -25,19 +28,41 @@ components:
       type: Label
     - name: cnn_text
       properties: {}
-      type: TextArea
-    - name: image_2
+      type: RichText
+    - name: spacer_3
+      properties: {height: 32}
+      type: Spacer
+    - components:
+      - layout_properties: {width: 372.6663129882813}
+        name: image_2
+        properties: {horizontal_align: center}
+        type: Image
+      - layout_properties: {width: 341.6666259765625}
+        name: image_3
+        properties: {}
+        type: Image
+      name: flow_panel_1
       properties: {}
-      type: Image
+      type: FlowPanel
     - name: lbl_trans
       properties: {text: Transformer Model}
       type: Label
-    - name: trans_text
-      properties: {content: TEXT EXCEPRT}
+    - layout_properties: {}
+      name: trans_text
+      properties: {content: TEXT EXCEPRT, role: null}
       type: RichText
-    - name: image_1
+    - components:
+      - layout_properties: {width: 361.33331298828125}
+        name: image_1
+        properties: {}
+        type: Image
+      - layout_properties: {width: 369}
+        name: image_4
+        properties: {}
+        type: Image
+      name: flow_panel_2
       properties: {}
-      type: Image
+      type: FlowPanel
     - name: spacer_2
       properties: {height: 32}
       type: Spacer
