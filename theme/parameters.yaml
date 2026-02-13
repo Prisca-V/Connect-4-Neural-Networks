@@ -281,21 +281,21 @@ color_scheme:
       - {color: 'rgba(255, 181, 155, 0.11)', name: Primary Overlay 3}
       name: Manarola Dark
 roles:
-- components: [Label]
+- components: [Label, TextBox]
   display_in_toolbox: true
   name: input-prompt
 - components: [Link]
   display_in_toolbox: true
   name: selected
-- components: [ColumnPanel, LinearPanel, XYPanel, RepeatingPanel]
+- components: [ColumnPanel, LinearPanel, XYPanel, RepeatingPanel, Label]
   display_in_toolbox: true
   name: outlined-card
   title: Outlined Card
-- components: [ColumnPanel, LinearPanel, XYPanel, RepeatingPanel]
+- components: [ColumnPanel, LinearPanel, XYPanel, RepeatingPanel, Label]
   display_in_toolbox: true
   name: elevated-card
   title: Elevated Card
-- components: [ColumnPanel, LinearPanel, XYPanel, RepeatingPanel]
+- components: [ColumnPanel, LinearPanel, XYPanel, RepeatingPanel, Label]
   display_in_toolbox: true
   name: tonal-card
   title: Tonal Card
@@ -340,3 +340,15 @@ roles:
 - components: [TextBox, TextArea, DatePicker, DropDown]
   display_in_toolbox: true
   name: input-error
+- components: [Button]
+  display_in_toolbox: true
+  name: primary-btn
+- components: [Button]
+  display_in_toolbox: true
+  name: ghost-btn
+- components: [outlined_card]
+  display_in_toolbox: true
+  name: chip
+- components: [outlined_card]
+  display_in_toolbox: true
+  name: call
