@@ -19,17 +19,22 @@ class Form1(Form1Template):
     self.game_mode = None
     self.board_game = [[0]*7 for _ in range(6)]  # 6 rows x 7 cols
     self.current_player = 1  # 1 = human, 2 = bot
+    self.game_over = False   # ✅ IMPORTANT: define this at startup
+
     # Hide overlay + messages initially
     self.result_overlay.visible = False
     self.win_msg.visible = False
     self.loser_msg.visible = False
+
     self._set_column_buttons_enabled(True)
+
     # Draw initial empty board
     self.render_board()
 
   def _set_column_buttons_enabled(self, enabled: bool):
     for i in range(1, 8):
       getattr(self, f"button_{i}").enabled = enabled
+
   # =========================
   # UI EVENTS
   # =========================
@@ -54,6 +59,7 @@ class Form1(Form1Template):
       alert(f"start_new_game() failed:\n{e}")
       return
 
+    # ✅ reset endgame UI/state
     self.game_over = False
     self.hide_result_overlay()
     self._set_column_buttons_enabled(True)
@@ -147,6 +153,7 @@ class Form1(Form1Template):
     if not self.game_mode:
       alert("Select a Game Mode first (CNN or Transformer).")
       return
+
     if self.game_over:
       return
 
@@ -163,13 +170,18 @@ class Form1(Form1Template):
       self.show_result_overlay(True, "GAME OVER! YOU WON!")
       return
 
+    # Draw
     if self.board_full():
       self.show_result_overlay(False, "DRAW! No more moves.")
       return
 
     # Bot move (Docker uplink)
     try:
-      result = anvil.server.call("get_bot_move", self.board_game, self.game_mode.lower())
+      result = anvil.server.call(
+        "get_bot_move",
+        self.board_game,
+        self.game_mode.lower()
+      )
       bot_col = result["column"]
     except Exception as e:
       alert(f"Bot call failed:\n{e}")
@@ -183,17 +195,14 @@ class Form1(Form1Template):
       self.show_result_overlay(False, "GAME OVER! YOU LOST!")
       return
 
+    # Draw
     if self.board_full():
       self.show_result_overlay(False, "DRAW! No more moves.")
       return
 
-  @handle("win_msg", "pressed_enter")
-  def win_msg_pressed_enter(self, **event_args):
-    pass
-
-  @handle("test_health", "pressed_enter")
-  def test_health_pressed_enter(self, **event_args):
-    pass
+  # =========================
+  # HEALTH CHECK
+  # =========================
 
   @handle("test_health", "click")
   def test_health_click(self, **event_args):
@@ -207,7 +216,10 @@ class Form1(Form1Template):
     except Exception as e:
       alert(f"❌ Backend NOT reachable:\n{e}")
 
-  ###CHECKING FOR WINNERS   
+  # =========================
+  # WIN / DRAW CHECKS
+  # =========================
+
   def check_winner(self, player: int) -> bool:
     B = self.board_game
     ROWS, COLS = 6, 7
@@ -241,34 +253,44 @@ class Form1(Form1Template):
   def board_full(self) -> bool:
     return all(self.board_game[0][c] != 0 for c in range(7))
 
-  @handle("play_again_button", "click")
-  def play_again_button_click(self, **event_args):
-    # hide overlay first
-    self.hide_result_overlay()
-    # start fresh game
-    self.start_new_game_click()
-    pass
+  # =========================
+  # OVERLAY + PLAY AGAIN
+  # =========================
 
   def show_result_overlay(self, won: bool, text: str):
     self.game_over = True
     self._set_column_buttons_enabled(False)
 
-    # Show overlay
     self.result_overlay.visible = True
-
-    # Show correct message box
     self.win_msg.visible = won
     self.loser_msg.visible = not won
+
     if won:
       self.win_msg.text = text
+      self.loser_msg.text = ""
     else:
       self.loser_msg.text = text
+      self.win_msg.text = ""
 
   def hide_result_overlay(self):
     self.result_overlay.visible = False
     self.win_msg.visible = False
     self.loser_msg.visible = False
+    self.win_msg.text = ""
+    self.loser_msg.text = ""
+
+  @handle("play_again_button", "click")
+  def play_again_button_click(self, **event_args):
+    # Just call the same start function (it resets everything)
+    self.start_new_game_click()
 
   @handle("close_overlay_btn", "click")
   def close_overlay_btn_click(self, **event_args):
     self.hide_result_overlay()
+
+  @handle("back_Homepage", "click")
+  def back_Homepage_click(self, **event_args):
+    open_form('Homepage')
+    pass
+
+ 
