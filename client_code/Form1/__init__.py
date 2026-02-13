@@ -179,8 +179,9 @@ class Form1(Form1Template):
       result = anvil.server.call("ping")
       alert(
         f"✅ Backend healthy\n\n"
-        f"Status: {result.get('status', 'ok')}\n"
+        f"Status: {result.get('ok')}\n"
         f"Timestamp: {result.get('ts')}"
       )
     except Exception as e:
       alert(f"❌ Backend NOT reachable:\n{e}")
+
