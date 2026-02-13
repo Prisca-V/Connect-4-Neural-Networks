@@ -1,41 +1,54 @@
 components:
-- layout_properties: {grid_position: 'HEIWRM,ENJTPB'}
-  name: spacer_1
-  properties: {height: '150'}
+- layout_properties: {grid_position: 'FMUJHA,RASGEL'}
+  name: spacer_2
+  properties: {height: 69.5}
   type: Spacer
-- layout_properties: {grid_position: 'FVKITZ,HXEDYT'}
-  name: Title_Login
-  properties: {align: center, text: Welcome}
-  type: Label
-- layout_properties: {grid_position: 'MIOUVE,QKLYWH'}
-  name: instructions
-  properties: {text: Please enter your email and passward}
-  type: Label
-- layout_properties: {grid_position: 'QNAGZL,JVUQBN GTQRPW,PYBUUT'}
-  name: Email_title
-  properties: {text: 'Email:'}
-  type: Label
-- layout_properties: {grid_position: 'QNAGZL,JVUQBN GUGSYT,WJRBOV'}
-  name: Password_title
-  properties: {text: 'Password:'}
-  type: Label
-- layout_properties: {grid_position: 'QNAGZL,UMJEKA HGDHIR,RQQOCZ'}
-  name: Email
-  properties: {}
-  type: TextBox
-- layout_properties: {grid_position: 'QNAGZL,UMJEKA AGDSZX,GKFITF'}
-  name: password
-  properties: {}
-  type: TextBox
-- layout_properties: {grid_position: 'QNAGZL,UMJEKA VUPGNT,GWQAFC'}
-  name: login_btn
-  properties: {text: Login}
-  type: Button
-- layout_properties: {grid_position: 'CYNYPS,TPJJYX'}
-  name: created_by
-  properties: {text: 'Created By: Shruthi, Prisca, Sam, Christian'}
-  type: Label
+- components:
+  - layout_properties: {grid_position: 'IQIVXZ,HSUSEZ'}
+    name: spacer_1
+    properties: {height: '150'}
+    type: Spacer
+  - layout_properties: {grid_position: 'MTFYGS,JUKFXV'}
+    name: Title_Login
+    properties: {align: center, role: game-title, text: Welcome}
+    type: Label
+  - layout_properties: {grid_position: 'JQPERS,NKMOBP'}
+    name: instructions
+    properties: {align: center, role: subhead, text: Please enter your email and passward}
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'HSBGEI,HOTYLI'}
+      name: Email
+      properties: {align: center}
+      type: TextBox
+    - layout_properties: {grid_position: 'BZACAB,CRIJZZ'}
+      name: Password
+      properties: {align: center, hide_text: true}
+      type: TextBox
+    - layout_properties: {grid_position: 'INKXUO,OLGYLN'}
+      name: login_btn
+      properties: {align: full, role: filled-button, text: Login}
+      type: Button
+    layout_properties: {grid_position: 'VPFUAN,KBELGN'}
+    name: column_panel_1
+    properties:
+      role: elevated-card
+      spacing:
+        padding: [null, 130, null, null]
+    type: ColumnPanel
+  - layout_properties: {grid_position: 'VOPQUK,QXUCXX'}
+    name: spacer_4
+    properties: {height: 65}
+    type: Spacer
+  - layout_properties: {grid_position: 'RXZUVT,DSKTEB'}
+    name: created_by
+    properties: {align: right, role: caption, text: 'Created By: Shruthi, Prisca, Sam, Christian'}
+    type: Label
+  layout_properties: {grid_position: 'ERPARJ,JYAATP'}
+  name: column_panel_2
+  properties: {role: outlined-card}
+  type: ColumnPanel
 container:
-  properties: {col_widths: '{"JVUQBN":10,"UMJEKA":50}', role: null}
+  properties: {col_widths: '{}', role: null}
   type: ColumnPanel
 is_package: true
