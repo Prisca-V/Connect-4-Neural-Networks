@@ -19,10 +19,17 @@ class Form1(Form1Template):
     self.game_mode = None
     self.board_game = [[0]*7 for _ in range(6)]  # 6 rows x 7 cols
     self.current_player = 1  # 1 = human, 2 = bot
-
+    # Hide overlay + messages initially
+    self.result_overlay.visible = False
+    self.win_msg.visible = False
+    self.loser_msg.visible = False
+    self._set_column_buttons_enabled(True)
     # Draw initial empty board
     self.render_board()
 
+  def _set_column_buttons_enabled(self, enabled: bool):
+    for i in range(1, 8):
+      getattr(self, f"button_{i}").enabled = enabled
   # =========================
   # UI EVENTS
   # =========================
@@ -46,6 +53,10 @@ class Form1(Form1Template):
     except Exception as e:
       alert(f"start_new_game() failed:\n{e}")
       return
+
+    self.game_over = False
+    self.hide_result_overlay()
+    self._set_column_buttons_enabled(True)
 
     self.render_board()
     alert("New game started!")
@@ -136,6 +147,8 @@ class Form1(Form1Template):
     if not self.game_mode:
       alert("Select a Game Mode first (CNN or Transformer).")
       return
+    if self.game_over:
+      return
 
     # Human move
     r = self.drop_piece(col, 1)
@@ -145,18 +158,18 @@ class Form1(Form1Template):
 
     self.render_board()
 
-    # 🔎 DEBUG: print board being sent to bot
-    print("Board being sent to bot:")
-    for row in self.board_game:
-      print(row)
+    # Check if human won
+    if self.check_winner(1):
+      self.show_result_overlay(True, "GAME OVER! YOU WON!")
+      return
+
+    if self.board_full():
+      self.show_result_overlay(False, "DRAW! No more moves.")
+      return
 
     # Bot move (Docker uplink)
     try:
-      result = anvil.server.call(
-        "get_bot_move",
-        self.board_game,
-        self.game_mode.lower()
-      )
+      result = anvil.server.call("get_bot_move", self.board_game, self.game_mode.lower())
       bot_col = result["column"]
     except Exception as e:
       alert(f"Bot call failed:\n{e}")
@@ -165,8 +178,17 @@ class Form1(Form1Template):
     self.drop_piece(bot_col, 2)
     self.render_board()
 
-  @handle("outlined_1", "pressed_enter")
-  def outlined_1_pressed_enter(self, **event_args):
+    # Check if bot won
+    if self.check_winner(2):
+      self.show_result_overlay(False, "GAME OVER! YOU LOST!")
+      return
+
+    if self.board_full():
+      self.show_result_overlay(False, "DRAW! No more moves.")
+      return
+
+  @handle("win_msg", "pressed_enter")
+  def win_msg_pressed_enter(self, **event_args):
     pass
 
   @handle("test_health", "pressed_enter")
@@ -185,3 +207,68 @@ class Form1(Form1Template):
     except Exception as e:
       alert(f"❌ Backend NOT reachable:\n{e}")
 
+  ###CHECKING FOR WINNERS   
+  def check_winner(self, player: int) -> bool:
+    B = self.board_game
+    ROWS, COLS = 6, 7
+
+    # horizontal
+    for r in range(ROWS):
+      for c in range(COLS - 3):
+        if all(B[r][c+i] == player for i in range(4)):
+          return True
+
+    # vertical
+    for r in range(ROWS - 3):
+      for c in range(COLS):
+        if all(B[r+i][c] == player for i in range(4)):
+          return True
+
+    # diag down-right
+    for r in range(ROWS - 3):
+      for c in range(COLS - 3):
+        if all(B[r+i][c+i] == player for i in range(4)):
+          return True
+
+    # diag up-right
+    for r in range(3, ROWS):
+      for c in range(COLS - 3):
+        if all(B[r-i][c+i] == player for i in range(4)):
+          return True
+
+    return False
+
+  def board_full(self) -> bool:
+    return all(self.board_game[0][c] != 0 for c in range(7))
+
+  @handle("play_again_button", "click")
+  def play_again_button_click(self, **event_args):
+    # hide overlay first
+    self.hide_result_overlay()
+    # start fresh game
+    self.start_new_game_click()
+    pass
+
+  def show_result_overlay(self, won: bool, text: str):
+    self.game_over = True
+    self._set_column_buttons_enabled(False)
+
+    # Show overlay
+    self.result_overlay.visible = True
+
+    # Show correct message box
+    self.win_msg.visible = won
+    self.loser_msg.visible = not won
+    if won:
+      self.win_msg.text = text
+    else:
+      self.loser_msg.text = text
+
+  def hide_result_overlay(self):
+    self.result_overlay.visible = False
+    self.win_msg.visible = False
+    self.loser_msg.visible = False
+
+  @handle("close_overlay_btn", "click")
+  def close_overlay_btn_click(self, **event_args):
+    self.hide_result_overlay()

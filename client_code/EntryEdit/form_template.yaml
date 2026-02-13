@@ -5,7 +5,11 @@ components:
   type: Spacer
 - layout_properties: {grid_position: 'FVKITZ,HXEDYT'}
   name: Title_Login
-  properties: {align: center, text: Log In}
+  properties: {align: center, text: Welcome}
+  type: Label
+- layout_properties: {grid_position: 'MIOUVE,QKLYWH'}
+  name: instructions
+  properties: {text: Please enter your email and passward}
   type: Label
 - layout_properties: {grid_position: 'QNAGZL,JVUQBN GTQRPW,PYBUUT'}
   name: Email_title
@@ -23,6 +27,14 @@ components:
   name: password
   properties: {}
   type: TextBox
+- layout_properties: {grid_position: 'QNAGZL,UMJEKA VUPGNT,GWQAFC'}
+  name: login_btn
+  properties: {text: Login}
+  type: Button
+- layout_properties: {grid_position: 'CYNYPS,TPJJYX'}
+  name: created_by
+  properties: {text: 'Created By: Shruthi, Prisca, Sam, Christian'}
+  type: Label
 container:
   properties: {col_widths: '{"JVUQBN":10,"UMJEKA":50}'}
   type: ColumnPanel

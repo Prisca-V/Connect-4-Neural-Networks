@@ -2,40 +2,45 @@ components:
 - components:
   - components:
     - layout_properties: {}
-      name: label_1
+      name: lbl_dataGen
       properties: {text: Data Generation}
       type: Label
+    - name: rich_text_1
+      properties: {content: TEXT EXCERPT}
+      type: RichText
     - name: spacer_1
       properties: {height: 32}
       type: Spacer
-    - layout_properties: {}
-      name: rich_text_1
-      properties: {content: TEXT EXCERPT}
-      type: RichText
     layout_properties: {grid_position: 'IBKSZC,NXMORG'}
     name: Data_Generation
     properties: {}
     type: LinearPanel
   - components:
     - layout_properties: {}
-      name: label_2
+      name: lbl_mdl_bld
       properties: {text: Model Building}
       type: Label
+    - name: lbl_cnn
+      properties: {text: Convolutional Neural Network-CNN}
+      type: Label
+    - name: cnn_text
+      properties: {}
+      type: TextArea
+    - name: image_2
+      properties: {}
+      type: Image
+    - name: lbl_trans
+      properties: {text: Transformer Model}
+      type: Label
+    - name: trans_text
+      properties: {content: TEXT EXCEPRT}
+      type: RichText
+    - name: image_1
+      properties: {}
+      type: Image
     - name: spacer_2
       properties: {height: 32}
       type: Spacer
-    - layout_properties: {}
-      name: label_3
-      properties: {text: Convolutional Neural Network-CNN}
-      type: Label
-    - layout_properties: {}
-      name: rich_text_2
-      properties: {content: TEXT EXCEPRT}
-      type: RichText
-    - layout_properties: {}
-      name: label_4
-      properties: {text: Transformer Model}
-      type: Label
     - layout_properties: {}
       name: rich_text_3
       properties: {content: TEXT EXCERPT}
@@ -45,14 +50,9 @@ components:
     properties: {}
     type: LinearPanel
   layout_properties: {slot: default}
-  name: content_panel
+  name: home
   properties: {}
   type: ColumnPanel
-- event_bindings: {}
-  layout_properties: {slot: title}
-  name: log_in
-  properties: {text: Log In}
-  type: Button
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
