@@ -1,83 +1,163 @@
 components:
 - components:
+  - event_bindings: {}
+    layout_properties: {grid_position: 'UBCMGD,IJTQYN'}
+    name: Play_game
+    properties: {align: right, role: elevated-button, text: Play Game}
+    type: Button
+  - layout_properties: {grid_position: 'KNZHVQ,YUQTEG'}
+    name: spacer_4
+    properties: {height: 32}
+    type: Spacer
   - components:
-    - name: label_1
-      properties: {}
-      type: Label
+    - components:
+      - layout_properties: {grid_position: 'WSFIHQ,JBSSKM'}
+        name: lbl_dataGen
+        properties: {role: headline, text: Data Generation}
+        type: Label
+      layout_properties: {}
+      name: column_panel_1
+      properties:
+        role: tonal-card
+        spacing:
+          padding: [0, null, 0, 27]
+      type: ColumnPanel
     - layout_properties: {}
-      name: lbl_dataGen
-      properties: {role: headline, text: Data Generation}
-      type: Label
-    - name: data_den_text
-      properties: {}
-      type: RichText
-    - name: spacer_1
-      properties: {height: 32}
+      name: spacer_1
+      properties: {height: '14'}
       type: Spacer
+    - layout_properties: {}
+      name: data_den_text
+      properties: {role: body-text}
+      type: RichText
     layout_properties: {grid_position: 'IBKSZC,NXMORG'}
     name: Data_Generation
     properties: {}
     type: LinearPanel
   - components:
+    - components:
+      - layout_properties: {grid_position: 'GEKMOC,UFNGOG'}
+        name: lbl_mdl_bld
+        properties: {role: headline, text: Model Building}
+        type: Label
+      layout_properties: {}
+      name: column_panel_2
+      properties:
+        role: tonal-card
+        spacing:
+          padding: [0, null, 1, null]
+      type: ColumnPanel
     - layout_properties: {}
-      name: lbl_mdl_bld
-      properties: {text: Model Building}
+      name: spacer_5
+      properties: {height: 14}
+      type: Spacer
+    - layout_properties: {}
+      name: lbl_cnn
+      properties: {bold: false, role: subhead, text: Convolutional Neural Network-CNN, underline: true}
       type: Label
-    - name: lbl_cnn
-      properties: {text: Convolutional Neural Network-CNN}
-      type: Label
-    - name: cnn_text
-      properties: {}
+    - layout_properties: {}
+      name: cnn_text
+      properties:
+        content: Modeling***
+        role: body-text
+        spacing:
+          padding: [null, 0, null, null]
       type: RichText
     - name: spacer_3
       properties: {height: 32}
       type: Spacer
+    - layout_properties: {}
+      name: label_2
+      properties: {role: caption, text: Board Analysis}
+      type: Label
+    - layout_properties: {}
+      name: rich_text_1
+      properties: {content: Board Analysis, role: body-text}
+      type: RichText
     - components:
-      - layout_properties: {width: 372.6663129882813}
-        name: image_2
-        properties: {horizontal_align: center}
-        type: Image
-      - layout_properties: {width: 341.6666259765625}
-        name: image_3
-        properties: {}
-        type: Image
+      - components:
+        - layout_properties: {grid_position: 'PONTBW,HIIXSR'}
+          name: image_3
+          properties: {}
+          type: Image
+        layout_properties: {width: 470}
+        name: outlined_card_2
+        properties:
+          role: outlined-card
+          spacing:
+            padding: [null, null, 15, null]
+        type: ColumnPanel
+      - components:
+        - layout_properties: {grid_position: 'NOPYOZ,WRSEUL'}
+          name: image_2
+          properties: {}
+          type: Image
+        layout_properties: {width: 470}
+        name: outlined_card_1
+        properties: {role: outlined-card}
+        type: ColumnPanel
       name: flow_panel_1
       properties: {}
       type: FlowPanel
-    - name: lbl_trans
-      properties: {text: Transformer Model}
-      type: Label
     - layout_properties: {}
+      name: spacer_6
+      properties: {height: 24.5}
+      type: Spacer
+    - layout_properties: {}
+      name: lbl_trans
+      properties: {bold: false, role: subhead, text: Transformer Model, underline: true}
+      type: Label
+    - components: []
+      layout_properties: {}
       name: trans_text
-      properties: {content: TEXT EXCEPRT, role: null}
+      properties: {content: modeling****, role: body-text}
       type: RichText
-    - components:
-      - layout_properties: {width: 361.33331298828125}
-        name: image_1
-        properties: {}
-        type: Image
-      - layout_properties: {width: 369}
-        name: image_4
-        properties: {}
-        type: Image
-      name: flow_panel_2
-      properties: {}
-      type: FlowPanel
     - name: spacer_2
       properties: {height: 32}
       type: Spacer
     - layout_properties: {}
+      name: label_1
+      properties: {role: caption, text: Board Analysis}
+      type: Label
+    - components: []
+      layout_properties: {}
       name: rich_text_3
-      properties: {content: TEXT EXCERPT}
+      properties: {content: Board Analysis, role: body-text}
       type: RichText
+    - components:
+      - components:
+        - layout_properties: {grid_position: 'HBWVBK,SNSCLD'}
+          name: image_1
+          properties: {}
+          type: Image
+        layout_properties: {width: 470}
+        name: outlined_card_3
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      - components:
+        - layout_properties: {grid_position: 'CMJNKO,RUQCWM'}
+          name: image_4
+          properties: {}
+          type: Image
+        layout_properties: {width: 470}
+        name: outlined_card_4
+        properties: {role: outlined-card}
+        type: ColumnPanel
+      name: flow_panel_2
+      properties: {}
+      type: FlowPanel
     layout_properties: {grid_position: 'QSTSNQ,QPROWN'}
     name: Model_Building
     properties: {}
     type: LinearPanel
   layout_properties: {slot: default}
   name: home
-  properties: {}
+  properties: {role: null}
   type: ColumnPanel
+- layout_properties: {slot: title}
+  name: headline_1
+  properties: {role: headline, text: Report}
+  type: Label
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate

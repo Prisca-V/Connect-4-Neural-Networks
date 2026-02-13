@@ -346,9 +346,27 @@ roles:
 - components: [Button]
   display_in_toolbox: true
   name: ghost-btn
-- components: [outlined_card]
+- components: [Outlined Card, ColumnPanel]
   display_in_toolbox: true
   name: chip
-- components: [outlined_card]
+- components: [Outlined Card]
   display_in_toolbox: true
   name: call
+- components: [ColumnPanel]
+  display_in_toolbox: true
+  name: page
+- components: [ColumnPanel]
+  display_in_toolbox: true
+  name: board-wrap
+- components: [ColumnPanel, Label]
+  display_in_toolbox: true
+  name: game-title
+- components: [Label, RichText]
+  display_in_toolbox: true
+  name: subhead
+- components: [Label, RichText]
+  display_in_toolbox: true
+  name: body-text
+- components: [Label, RichText]
+  display_in_toolbox: true
+  name: caption

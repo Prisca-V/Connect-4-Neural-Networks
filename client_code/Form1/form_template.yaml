@@ -30,12 +30,16 @@ components:
   - event_bindings: {}
     layout_properties: {grid_position: 'MYFLJA,YIWSGQ'}
     name: back_Homepage
-    properties: {align: left, text: Home Page}
+    properties: {align: left, role: elevated-button, text: Home Page}
     type: Button
+  - layout_properties: {grid_position: 'JHHEYA,USANJX'}
+    name: spacer_43
+    properties: {height: 32}
+    type: Spacer
   - event_bindings: {}
     layout_properties: {grid_position: 'DYBOLH,JMDQRL'}
     name: start_new_game
-    properties: {align: right, text: Start New Game}
+    properties: {align: right, role: elevated-button, text: Start New Game}
     type: Button
   - layout_properties: {grid_position: 'DYBOLH,MGSBAE'}
     name: lbl_dame_mode
@@ -53,7 +57,7 @@ components:
     type: DropDown
   - layout_properties: {grid_position: 'PTZWHK,DLXFGB'}
     name: label_1
-    properties: {align: center, text: Connect 4}
+    properties: {align: center, role: game-title, text: Connect 4}
     type: Label
   - components:
     - event_bindings: {}
@@ -115,359 +119,366 @@ components:
     type: FlowPanel
   - components:
     - components:
-      - layout_properties: {width: 40}
-        name: outlined_card_1
-        properties: {border: '', col_spacing: large, role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_6
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_2
-        properties: {col_spacing: large, role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_5
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_3
-        properties: {border: '40', role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_4
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_4
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_3
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_5
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_2
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_6
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_1
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_7
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      layout_properties: {grid_position: 'OWBMET,FNGQLO'}
-      name: flow_panel_2
-      properties: {align: center}
-      type: FlowPanel
-    - components:
-      - layout_properties: {width: 40}
-        name: outlined_card_8
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_13
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_9
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_14
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_10
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_15
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_11
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_16
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_12
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_17
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_13
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_18
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_14
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      layout_properties: {grid_position: 'YRERIY,VTCQDH'}
-      name: flow_panel_3
-      properties: {align: center}
-      type: FlowPanel
-    - components:
-      - layout_properties: {width: 40}
-        name: outlined_card_15
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_19
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_16
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_20
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_17
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_21
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_18
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_22
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_19
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_23
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_20
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_24
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_21
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      layout_properties: {grid_position: 'TMBATA,RCDISY'}
-      name: flow_panel_4
-      properties: {align: center}
-      type: FlowPanel
-    - components:
-      - layout_properties: {width: 40}
-        name: outlined_card_22
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_25
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_23
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_26
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_24
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_27
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_25
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_28
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_26
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_29
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_27
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_30
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_28
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      layout_properties: {grid_position: 'OJDLFK,KBLRNO'}
-      name: flow_panel_5
-      properties: {align: center}
-      type: FlowPanel
-    - components:
-      - layout_properties: {width: 40}
-        name: outlined_card_29
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_31
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_30
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_32
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_31
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_33
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_32
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_34
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_33
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_35
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_34
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_36
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_35
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      layout_properties: {grid_position: 'FMAZMQ,RVHPMA'}
-      name: flow_panel_6
-      properties: {align: center}
-      type: FlowPanel
-    - components:
-      - layout_properties: {width: 40}
-        name: outlined_card_36
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_37
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_37
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_38
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_38
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_39
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_39
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_40
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_40
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_41
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_41
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      - layout_properties: {width: 13}
-        name: spacer_42
-        properties: {height: 32}
-        type: Spacer
-      - layout_properties: {width: 40}
-        name: outlined_card_42
-        properties: {role: outlined-card}
-        type: ColumnPanel
-      layout_properties: {grid_position: 'NHUYHL,AMRJFK'}
-      name: flow_panel_7
-      properties: {align: center}
-      type: FlowPanel
-    layout_properties: {full_width_row: false, grid_position: 'MJRCUQ,ISHRIG', row_background: ''}
-    name: board
-    properties: {background: '#2694e8', border: '20', col_spacing: none, spacing_above: large}
+      - components:
+        - data_bindings: []
+          layout_properties: {width: 40}
+          name: outlined_card_1
+          properties: {border: '', col_spacing: large, role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_6
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_2
+          properties: {col_spacing: large, role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_5
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_3
+          properties: {border: '40', role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_4
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_4
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_3
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_5
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_2
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_6
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_1
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_7
+          properties: {role: chip}
+          type: ColumnPanel
+        layout_properties: {grid_position: 'OWBMET,FNGQLO'}
+        name: flow_panel_2
+        properties: {align: center}
+        type: FlowPanel
+      - components:
+        - layout_properties: {width: 40}
+          name: outlined_card_8
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_13
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_9
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_14
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_10
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_15
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_11
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_16
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_12
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_17
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_13
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_18
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_14
+          properties: {role: chip}
+          type: ColumnPanel
+        layout_properties: {grid_position: 'YRERIY,VTCQDH'}
+        name: flow_panel_3
+        properties: {align: center}
+        type: FlowPanel
+      - components:
+        - layout_properties: {width: 40}
+          name: outlined_card_15
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_19
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_16
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_20
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_17
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_21
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_18
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_22
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_19
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_23
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_20
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_24
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_21
+          properties: {role: chip}
+          type: ColumnPanel
+        layout_properties: {grid_position: 'TMBATA,RCDISY'}
+        name: flow_panel_4
+        properties: {align: center}
+        type: FlowPanel
+      - components:
+        - layout_properties: {width: 40}
+          name: outlined_card_22
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_25
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_23
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_26
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_24
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_27
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_25
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_28
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_26
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_29
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_27
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_30
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_28
+          properties: {role: chip}
+          type: ColumnPanel
+        layout_properties: {grid_position: 'OJDLFK,KBLRNO'}
+        name: flow_panel_5
+        properties: {align: center}
+        type: FlowPanel
+      - components:
+        - layout_properties: {width: 40}
+          name: outlined_card_29
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_31
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_30
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_32
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_31
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_33
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_32
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_34
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_33
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_35
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_34
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_36
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_35
+          properties: {role: chip}
+          type: ColumnPanel
+        layout_properties: {grid_position: 'FMAZMQ,RVHPMA'}
+        name: flow_panel_6
+        properties: {align: center}
+        type: FlowPanel
+      - components:
+        - layout_properties: {width: 40}
+          name: outlined_card_36
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_37
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_37
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_38
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_38
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_39
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_39
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_40
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_40
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_41
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_41
+          properties: {role: chip}
+          type: ColumnPanel
+        - layout_properties: {width: 13}
+          name: spacer_42
+          properties: {height: 32}
+          type: Spacer
+        - layout_properties: {width: 40}
+          name: outlined_card_42
+          properties: {role: chip}
+          type: ColumnPanel
+        layout_properties: {grid_position: 'NHUYHL,AMRJFK'}
+        name: flow_panel_7
+        properties: {align: center}
+        type: FlowPanel
+      data_bindings: []
+      layout_properties: {grid_position: 'SXTZSB,YMDQIB'}
+      name: board
+      properties: {background: '#2694e8', border: '20', col_spacing: none, role: outlined-card, spacing_above: large}
+      type: ColumnPanel
+    layout_properties: {grid_position: 'WQQKLT,DVBPBA'}
+    name: column_panel_2
+    properties: {role: board-wrap, tooltip: .anvil-role-board-wrap}
     type: ColumnPanel
   - event_bindings: {}
     layout_properties: {grid_position: 'NUXGWG,JQUYXY'}
     name: test_health
     properties: {text: button_8, visible: true}
     type: Button
-  layout_properties: {grid_position: 'AVRHQV,NINBCB'}
+  layout_properties: {grid_position: 'AVRHQV,DYRERN'}
   name: column_panel_1
-  properties: {}
+  properties: {role: tonal-card}
   type: ColumnPanel
 container:
   properties: {border: ''}

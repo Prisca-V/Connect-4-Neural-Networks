@@ -1144,12 +1144,22 @@ body, .anvil-container{
 }
 
 .anvil-role-chip{
+  overflow: hidden;
+
   width: 44px;
   height: 44px;
-  border-radius: 14px;
-  border: 1px solid rgba(15,23,42,0.12);
-  background: rgba(255,255,255,0.75);
-  box-shadow: 0 8px 16px rgba(15,23,42,0.08);
+
+  border-radius: 999px;     /* perfect circle */
+
+  background-color: %color:Surface%;   /* allows red/yellow to show */
+
+  border: 2px solid rgba(255,255,255,0.85);
+
+  padding: 0;   /* important — prevents shrinking circle */
+
+  box-shadow:
+    inset 0 6px 10px rgba(0,0,0,0.25),
+    0 4px 10px rgba(0,0,0,0.12);
 }
 
 .anvil-role-drop-btn{
@@ -1171,3 +1181,47 @@ body, .anvil-container{
   box-shadow: 0 8px 14px rgba(15,23,42,0.10) !important;
 }
 .anvil-role-cell{ border-radius: 999px; }
+.anvil-role-board-wrap{
+  max-width: 600px;   /* adjust to taste */
+  margin: 0 auto;
+}
+
+.anvil-role-game-title{
+  font-size: 45px;              /* tweak */
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: center;
+
+  color: #ffffff;               /* white fill */
+
+  /* dark outline (works in most browsers) */
+  -webkit-text-stroke: 3px rgba(0,0,0,0.80);
+
+  /* fallback outline using shadows (also adds the “bold” look) */
+  text-shadow:
+    2px 2px 0 rgba(0,0,0,0.80),
+    -2px 2px 0 rgba(0,0,0,0.80),
+    2px -2px 0 rgba(0,0,0,0.80),
+    -2px -2px 0 rgba(0,0,0,0.80),
+    0px 6px 14px rgba(0,0,0,0.25);  /* soft drop shadow */
+}
+
+.anvil-role-subhead{
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.anvil-role-body-text{
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(15,23,42,0.75);
+}
+
+.anvil-role-caption{
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(15,23,42,0.55);
+  letter-spacing: .3px;
+  text-transform: uppercase;
+}
