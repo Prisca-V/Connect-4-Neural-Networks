@@ -2,7 +2,9 @@ from ._anvil_designer import LoginPageTemplate
 from anvil import *
 import anvil.users
 
+
 class LoginPage(LoginPageTemplate):
+
   def __init__(self, **properties):
     self.init_components(**properties)
 
@@ -35,20 +37,15 @@ class LoginPage(LoginPageTemplate):
       return
 
     try:
-      # attempt login
       user = anvil.users.login_with_email(email, password)
-
       if user:
-        open_form("Homepage")   # change if your home form name differs
-
+        open_form("Homepage")
     except anvil.users.AuthenticationFailed:
-      # covers wrong email OR wrong password
       self.show_error("Incorrect email or password.")
-
     except Exception as e:
-      self.show_error(f"Login error: {e}")
+      self.show_error("Login error: " + str(e))
 
-  @handle("Email", "pressed_enter")
-  def Email_pressed_enter(self, **event_args):
-    """This method is called when the user presses Enter in this text box"""
-    pass
+  @handle("Password", "pressed_enter")
+  def Password_pressed_enter(self, **event_args):
+    self.login_btn_click()
+

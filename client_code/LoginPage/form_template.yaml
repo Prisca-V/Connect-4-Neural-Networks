@@ -22,11 +22,13 @@ components:
       name: Email
       properties: {align: center, placeholder: Email, text: ''}
       type: TextBox
-    - layout_properties: {grid_position: 'BZACAB,CRIJZZ'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'BZACAB,CRIJZZ'}
       name: Password
       properties: {align: center, hide_text: true, placeholder: Passward}
       type: TextBox
-    - layout_properties: {grid_position: 'INKXUO,OLGYLN'}
+    - event_bindings: {}
+      layout_properties: {grid_position: 'INKXUO,OLGYLN'}
       name: login_btn
       properties: {align: full, role: filled-button, text: Login}
       type: Button
