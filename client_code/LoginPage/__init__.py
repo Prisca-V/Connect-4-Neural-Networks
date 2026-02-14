@@ -28,7 +28,7 @@ class LoginPage(LoginPageTemplate):
     self.clear_error()
 
     email = (self.Email.text or "").strip()
-    password = self.password.text or ""
+    password = self.Password.text or ""
 
     if not email or not password:
       self.show_error("Please enter both email and password.")
