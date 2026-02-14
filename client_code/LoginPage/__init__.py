@@ -47,3 +47,8 @@ class LoginPage(LoginPageTemplate):
 
     except Exception as e:
       self.show_error(f"Login error: {e}")
+
+  @handle("Email", "pressed_enter")
+  def Email_pressed_enter(self, **event_args):
+    """This method is called when the user presses Enter in this text box"""
+    pass
