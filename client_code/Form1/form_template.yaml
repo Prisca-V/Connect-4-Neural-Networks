@@ -82,7 +82,7 @@ components:
       type: Spacer
     - layout_properties: {expand: false, width: 50}
       name: button_2
-      properties: {background: '#121212', border: '5', font_size: 0, role: elevated-button, text: ''}
+      properties: {background: '#121212', border: '5', font_size: 0, role: elevated-button, text: click}
       type: Button
     - layout_properties: {width: 5}
       name: spacer_12
