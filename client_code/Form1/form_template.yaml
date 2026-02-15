@@ -483,7 +483,7 @@ components:
     type: Button
   layout_properties: {grid_position: 'AVRHQV,DYRERN'}
   name: column_panel_1
-  properties: {role: tonal-card}
+  properties: {role: page}
   type: ColumnPanel
 container:
   properties: {border: ''}
