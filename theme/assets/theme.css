@@ -1225,3 +1225,23 @@ body, .anvil-container{
   letter-spacing: .3px;
   text-transform: uppercase;
 }
+.anvil-role-section-title{
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  padding: 14px 18px;
+  border-radius: 16px;
+
+  color: rgba(15,23,42,0.92);
+
+  /* COOL GLASS BLUE */
+  background:
+    linear-gradient(90deg,
+                    rgba(0,180,190,0.22),
+                    rgba(99,102,241,0.10)
+                   ),
+    rgba(255,255,255,0.55);
+
+  border: 1px solid rgba(0,180,190,0.25);
+}
