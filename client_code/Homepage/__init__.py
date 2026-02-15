@@ -1,5 +1,6 @@
 from ._anvil_designer import HomepageTemplate
 from anvil import *
+import plotly.graph_objects as go
 import anvil.users
 import anvil.server
 import anvil.tables as tables

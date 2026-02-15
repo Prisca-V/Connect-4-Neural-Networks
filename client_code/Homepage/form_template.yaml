@@ -1,6 +1,6 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'ODUTHU,LBRXHP'}
+  - layout_properties: {grid_position: 'YELVAO,EKXHVV ODUTHU,LBRXHP'}
     name: spacer_7
     properties: {height: 68}
     type: Spacer
@@ -14,7 +14,7 @@ components:
       name: Play_game
       properties: {align: right, icon_align: right, role: elevated-button, text: Play Game}
       type: Button
-    layout_properties: {grid_position: 'RHYSQN,CUJXKE'}
+    layout_properties: {grid_position: 'YELVAO,EKXHVV RHYSQN,CUJXKE'}
     name: column_panel_3
     properties: {}
     type: ColumnPanel
@@ -68,15 +68,19 @@ components:
         spacing:
           padding: [null, null, null, 13]
       type: RichText
-    layout_properties: {grid_position: 'IJPOSL,EMJLFU'}
+    layout_properties: {grid_position: 'YELVAO,EKXHVV IJPOSL,EMJLFU'}
     name: outlined_card_5
     properties: {background: 'theme:Tertiary', role: outlined-card}
     type: ColumnPanel
   - components: []
-    layout_properties: {grid_position: 'IBKSZC,NXMORG'}
+    layout_properties: {grid_position: 'YELVAO,EKXHVV IBKSZC,NXMORG'}
     name: Data_Generation
     properties: {}
     type: LinearPanel
+  - layout_properties: {grid_position: 'YELVAO,FVTBVW'}
+    name: label_4
+    properties: {}
+    type: Label
   - components:
     - components:
       - layout_properties: {grid_position: 'GEKMOC,UFNGOG'}
@@ -150,10 +154,53 @@ components:
       name: lbl_trans
       properties: {bold: false, role: subhead, text: Transformer Model, underline: true}
       type: Label
+    - layout_properties: {}
+      name: text_box_1
+      properties: {text: Model Overview}
+      type: TextBox
+    - layout_properties: {}
+      name: label_3
+      properties: {text: Model Overview}
+      type: Label
     - components: []
       layout_properties: {}
       name: trans_text
-      properties: {content: modeling****, role: body-text}
+      properties: {content: 'For this project, I built a Vision Transformer (ViT) to learn Connect 4 strategy from Monte Carlo Tree Search (MCTS) data. The transformer treats the Connect 4 board as an image and uses self-attention mechanisms to identify winning patterns.Unlike CNNs that use fixed convolutional filters, transformers use attention mechanisms that can dynamically focus on any part of the board. This is particularly useful for Connect 4, where the importance of a position depends heavily on context. A piece in column 3 might be critical for blocking an opponent''s diagonal, but irrelevant in another game state.', role: body-text}
+      type: RichText
+    - layout_properties: {}
+      name: label_5
+      properties: {text: Model Architecture}
+      type: Label
+    - layout_properties: {}
+      name: rich_text_6
+      properties: {content: 'The board is encoded as a 6×7×2 representation, where two channels are used to clearly distinguish between the players. Channel 0 contains Player +1’s pieces, marked with a value of 1 wherever their pieces are present, while Channel 1 contains Player −1’s pieces, also marked with a value of 1 at occupied positions. Empty cells are represented by 0 in both channels. This two-channel encoding allows the model to differentiate between players more effectively than a single-channel −1/0/+1 representation.'}
+      type: RichText
+    - layout_properties: {}
+      name: label_6
+      properties: {text: Patch Strategy}
+      type: Label
+    - layout_properties: {}
+      name: rich_text_5
+      properties: {content: 'Patches are extracted using a 3×3 patch size with a stride of 2, creating overlapping regions as recommended in the project description. This process produces a total of 9 patches arranged in a 3×3 grid. When flattened, each patch contains 3×3×2 = 18 values. The overlapping design is intentional and beneficial because Connect 4 winning patterns, such as four-in-a-row sequences, often span across multiple regions of the board, so overlapping patches help preserve important spatial relationships.'}
+      type: RichText
+    - layout_properties: {}
+      name: label_7
+      properties: {text: Transformer Configuration}
+      type: Label
+    - name: rich_text_7
+      properties: {}
+      type: RichText
+    - name: rich_text_8
+      properties: {}
+      type: RichText
+    - name: rich_text_9
+      properties: {}
+      type: RichText
+    - name: rich_text_10
+      properties: {}
+      type: RichText
+    - name: rich_text_11
+      properties: {}
       type: RichText
     - name: spacer_2
       properties: {height: 32}
@@ -189,7 +236,7 @@ components:
       name: flow_panel_2
       properties: {}
       type: FlowPanel
-    layout_properties: {grid_position: 'QSTSNQ,QPROWN'}
+    layout_properties: {grid_position: 'YELVAO,EKXHVV QSTSNQ,QPROWN'}
     name: Model_Building
     properties: {}
     type: LinearPanel
