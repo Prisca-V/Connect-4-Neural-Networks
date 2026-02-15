@@ -52,7 +52,11 @@ components:
       type: RichText
     - layout_properties: {grid_position: 'LPUCRU,LCOUGH'}
       name: rich_text_4
-      properties: {background: 'theme:Light Overlay 1', content: 'After the opening phase, MCTS selects moves based on a configurable search depth that controls how strong the agent plays. At each valid turn, the current board is encoded from the perspective of the player to move using a 6×7×2 tensor. The first channel represents the current player’s discs, and the second channel represents the opponent’s discs. This canonical encoding removes the need for a separate turn indicator and allows a single model to learn both players’ strategies.'}
+      properties:
+        background: theme:Light Overlay 1
+        content: After the opening phase, MCTS selects moves based on a configurable search depth that controls how strong the agent plays. At each valid turn, the current board is encoded from the perspective of the player to move using a 6×7×2 tensor. The first channel represents the current player’s discs, and the second channel represents the opponent’s discs. This canonical encoding removes the need for a separate turn indicator and allows a single model to learn both players’ strategies.
+        spacing:
+          padding: [null, null, null, 13]
       type: RichText
     - layout_properties: {grid_position: 'XQWEVP,VSTNRA'}
       name: rich_text_2
@@ -191,7 +195,7 @@ components:
     type: LinearPanel
   layout_properties: {slot: default}
   name: home
-  properties: {role: page}
+  properties: {background: '#1a1a2e', role: page}
   type: ColumnPanel
 container:
   properties: {html: '@theme:standard-page.html'}

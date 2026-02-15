@@ -14,6 +14,7 @@ class Form1(Form1Template):
 
     # Map outlined_card_1..outlined_card_42 into a 6x7 grid
     self.init_board_cells()
+    # self._wire_board_clicks() 
 
     # Game state
     self.game_mode = None
@@ -41,6 +42,17 @@ class Form1(Form1Template):
   # HELPERS
   # =========================
 
+  # def _wire_board_clicks(self):
+  #   for r in range(6):
+  #     for c in range(7):
+  #       cell = self.cells[r][c]          # this is a ColumnPanel
+  #       cell.set_event_handler('mouse_down', self._make_cell_handler(c))
+  
+  # def _make_cell_handler(self, col):
+  #   def handler(**event_args):
+  #     self.play_column(col)
+  #   return handler
+      
   def _set_column_buttons_enabled(self, enabled: bool):
     for i in range(1, 8):
       getattr(self, f"button_{i}").enabled = enabled
