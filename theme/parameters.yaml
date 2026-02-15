@@ -370,3 +370,22 @@ roles:
 - components: [Label, RichText]
   display_in_toolbox: true
   name: caption
+- components: [ColumnPanel]
+  display_in_toolbox: true
+  name: report-wrap
+- components: [ColumnPanel]
+  display_in_toolbox: true
+  name: report-card
+- components: [Label]
+  display_in_toolbox: true
+  name: report-title
+- components: [Label]
+  display_in_toolbox: true
+  name: report-subhead
+  title: ''
+- components: [Label]
+  display_in_toolbox: true
+  name: stat
+- components: [RichText]
+  display_in_toolbox: true
+  name: report-body

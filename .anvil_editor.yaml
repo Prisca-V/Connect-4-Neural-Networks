@@ -8,8 +8,6 @@ unique_ids:
   forms:
     Form1: '177022296624745139393035.99113'
     Homepage: NCYTHO2P7V27A7TV37YAWUGB52NDDGSI
-    Homepage.RowTemplate1: '1771194011017593626199134.6766'
-    Homepage.RowTemplate2: '1771194019855471824156389.29065'
     LoginPage: '1770746924184952106425346.423'
   modules: {}
   scripts: {}

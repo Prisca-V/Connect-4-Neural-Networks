@@ -1245,3 +1245,74 @@ body, .anvil-container{
 
   border: 1px solid rgba(0,180,190,0.25);
 }
+/* Center the report and limit line-length */
+.anvil-role-report-wrap{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 18px 14px;
+}
+
+/* Card styling */
+.anvil-role-report-card{
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(15,23,42,0.10);
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(15,23,42,0.10);
+  padding: 18px 18px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+}
+
+/* Section title like "Transformer Model" */
+.anvil-role-report-title{
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+}
+
+/* Subhead like "Model Overview", "Training Process" */
+.anvil-role-report-subhead{
+  font-size: 18px;
+  font-weight: 700;
+  margin: 14px 0 6px 0;
+}
+
+/* Body text */
+.anvil-role-report-body{
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: rgba(15,23,42,0.78);
+}
+
+/* Lists / bullets inside RichText */
+.anvil-role-report-body ul,
+.anvil-role-report-body ol{
+  margin: 8px 0 8px 20px;
+}
+
+/* Inline code-ish text */
+.anvil-role-inline-code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.95em;
+  padding: 2px 6px;
+  border-radius: 10px;
+  background: rgba(15,23,42,0.06);
+}
+
+/* Small label / caption */
+.anvil-role-report-caption{
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  text-transform: uppercase;
+  color: rgba(15,23,42,0.55);
+  margin-top: 12px;
+}
+
+.anvil-role-stat{
+  background: rgba(15,23,42,0.04);
+  border: 1px solid rgba(15,23,42,0.08);
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-weight: 700;
+}
