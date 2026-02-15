@@ -483,7 +483,7 @@ components:
     type: Button
   layout_properties: {grid_position: 'AVRHQV,DYRERN', row_background: '#1a1a2e'}
   name: column_panel_1
-  properties: {role: page}
+  properties: {background: '', border: '', role: page}
   type: ColumnPanel
 container:
   properties: {border: ''}
