@@ -41,6 +41,11 @@ components:
     name: start_new_game
     properties: {align: right, role: elevated-button, text: Start New Game}
     type: Button
+  - event_bindings: {}
+    layout_properties: {grid_position: 'DYBOLH,MVBAWO'}
+    name: bot_first
+    properties: {role: elevated-button, text: Bot Starts First}
+    type: Button
   - layout_properties: {grid_position: 'DYBOLH,MGSBAE'}
     name: lbl_dame_mode
     properties: {align: right, text: 'Game Mode:'}

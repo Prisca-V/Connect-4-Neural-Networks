@@ -15,25 +15,42 @@ class Form1(Form1Template):
     # Map outlined_card_1..outlined_card_42 into a 6x7 grid
     self.init_board_cells()
 
-    # Game state (DO NOT name this 'board')
+    # Game state
     self.game_mode = None
-    self.board_game = [[0]*7 for _ in range(6)]  # 6 rows x 7 cols
-    self.current_player = 1  # 1 = human, 2 = bot
-    self.game_over = False   # ✅ IMPORTANT: define this at startup
+    self.board_game = [[0] * 7 for _ in range(6)]  # 6 rows x 7 cols
+    self.game_over = False
+
+    # Default = human starts; only True when bot_first is clicked
+    self.bot_starts = False
+
+    # Prevent clicks during bot move
+    self.bot_turn_in_progress = False
 
     # Hide overlay + messages initially
     self.result_overlay.visible = False
     self.win_msg.visible = False
     self.loser_msg.visible = False
 
+    # Enable column buttons
     self._set_column_buttons_enabled(True)
 
     # Draw initial empty board
     self.render_board()
 
+  # =========================
+  # HELPERS
+  # =========================
+
   def _set_column_buttons_enabled(self, enabled: bool):
     for i in range(1, 8):
       getattr(self, f"button_{i}").enabled = enabled
+
+  def _require_mode(self) -> bool:
+    if not self.game_mode_dropdown.selected_value:
+      alert("Select a Game Mode first (CNN or Transformer).")
+      return False
+    self.game_mode = self.game_mode_dropdown.selected_value
+    return True
 
   # =========================
   # UI EVENTS
@@ -45,28 +62,16 @@ class Form1(Form1Template):
 
   @handle("start_new_game", "click")
   def start_new_game_click(self, **event_args):
-    if not self.game_mode_dropdown.selected_value:
-      alert("Select a Game Mode first (CNN or Transformer).")
-      return
+    # Default behavior: clear/reset board; human starts unless bot_starts flag is set
+    self._start_new_game()
 
-    self.game_mode = self.game_mode_dropdown.selected_value
+  @handle("bot_first", "click")
+  def bot_first_click(self, **event_args):
+    # User chooses bot starts first for this round
+    self.bot_starts = True
+    self._start_new_game()
 
-    try:
-      result = anvil.server.call("start_new_game")
-      self.board_game = result["board"]
-      self.current_player = result.get("current_player", 1)
-    except Exception as e:
-      alert(f"start_new_game() failed:\n{e}")
-      return
-
-    # ✅ reset endgame UI/state
-    self.game_over = False
-    self.hide_result_overlay()
-    self._set_column_buttons_enabled(True)
-
-    self.render_board()
-    alert("New game started!")
-
+  # Column buttons (human move)
   @handle("button_1", "click")
   def button_1_click(self, **event_args):
     self.play_column(0)
@@ -96,6 +101,85 @@ class Form1(Form1Template):
     self.play_column(6)
 
   # =========================
+  # GAME START / RESET
+  # =========================
+
+  def _start_new_game(self):
+    if not self._require_mode():
+      return
+
+    try:
+      result = anvil.server.call("start_new_game")
+      # If your server returns a blank board, great:
+      self.board_game = result.get("board", [[0] * 7 for _ in range(6)])
+    except Exception as e:
+      alert(f"start_new_game() failed:\n{e}")
+      return
+
+    # Reset endgame UI/state
+    self.game_over = False
+    self.hide_result_overlay()
+
+    # Render cleared board
+    self.render_board()
+
+    # If bot starts, make exactly ONE bot move immediately
+    if self.bot_starts:
+      self.bot_turn_in_progress = True
+      self._set_column_buttons_enabled(False)
+
+      self.bot_move_once()
+
+      self._set_column_buttons_enabled(True)
+      self.bot_turn_in_progress = False
+
+    # Always reset to default (human starts next time)
+    self.bot_starts = False
+
+    # Optional: remove this alert if it annoys you
+    # alert("New game started!")
+
+  # =========================
+  # BOT MOVE (ONE TURN ONLY)
+  # =========================
+
+  def bot_move_once(self):
+    """Make exactly one bot move. No loops, no extra turns."""
+    if self.game_over:
+      return
+
+    if not self.game_mode:
+      return
+
+    try:
+      result = anvil.server.call("get_bot_move", self.board_game, self.game_mode.lower())
+      bot_col = result["column"]
+    except Exception as e:
+      alert(f"Bot call failed:\n{e}")
+      return
+
+    if bot_col is None:
+      alert("Bot did not return a column.")
+      return
+
+    placed_row = self.drop_piece(bot_col, 2)
+    if placed_row is None:
+      alert("Bot chose a full column.")
+      return
+
+    self.render_board()
+
+    # Bot win?
+    if self.check_winner(2):
+      self.show_result_overlay(False, "GAME OVER! YOU LOST!")
+      return
+
+    # Draw?
+    if self.board_full():
+      self.show_result_overlay(False, "DRAW! No more moves.")
+      return
+
+  # =========================
   # BOARD MAPPING + RENDERING
   # =========================
 
@@ -106,13 +190,11 @@ class Form1(Form1Template):
         m = re.match(r"outlined_card_(\d+)$", name)
         if m:
           cards.append((int(m.group(1)), comp))
-
     cards.sort(key=lambda x: x[0])
     return [c for _, c in cards]
 
   def init_board_cells(self):
     cards = self._collect_outlined_cards()
-
     if len(cards) != 42:
       raise Exception(f"Expected 42 outlined cards (6x7), found {len(cards)}")
 
@@ -130,7 +212,6 @@ class Form1(Form1Template):
       for c in range(7):
         cell = self.cells[r][c]
         v = self.board_game[r][c]
-
         if v == 0:
           cell.background = "white"
         elif v == 1:
@@ -150,11 +231,13 @@ class Form1(Form1Template):
     return None
 
   def play_column(self, col):
-    if not self.game_mode:
-      alert("Select a Game Mode first (CNN or Transformer).")
+    if not self._require_mode():
       return
 
     if self.game_over:
+      return
+
+    if self.bot_turn_in_progress:
       return
 
     # Human move
@@ -165,40 +248,24 @@ class Form1(Form1Template):
 
     self.render_board()
 
-    # Check if human won
+    # Human win?
     if self.check_winner(1):
       self.show_result_overlay(True, "GAME OVER! YOU WON!")
       return
 
-    # Draw
+    # Draw?
     if self.board_full():
       self.show_result_overlay(False, "DRAW! No more moves.")
       return
 
-    # Bot move (Docker uplink)
-    try:
-      result = anvil.server.call(
-        "get_bot_move",
-        self.board_game,
-        self.game_mode.lower()
-      )
-      bot_col = result["column"]
-    except Exception as e:
-      alert(f"Bot call failed:\n{e}")
-      return
+    # Bot move (exactly one)
+    self.bot_turn_in_progress = True
+    self._set_column_buttons_enabled(False)
 
-    self.drop_piece(bot_col, 2)
-    self.render_board()
+    self.bot_move_once()
 
-    # Check if bot won
-    if self.check_winner(2):
-      self.show_result_overlay(False, "GAME OVER! YOU LOST!")
-      return
-
-    # Draw
-    if self.board_full():
-      self.show_result_overlay(False, "DRAW! No more moves.")
-      return
+    self._set_column_buttons_enabled(True)
+    self.bot_turn_in_progress = False
 
   # =========================
   # HEALTH CHECK
@@ -227,25 +294,25 @@ class Form1(Form1Template):
     # horizontal
     for r in range(ROWS):
       for c in range(COLS - 3):
-        if all(B[r][c+i] == player for i in range(4)):
+        if all(B[r][c + i] == player for i in range(4)):
           return True
 
     # vertical
     for r in range(ROWS - 3):
       for c in range(COLS):
-        if all(B[r+i][c] == player for i in range(4)):
+        if all(B[r + i][c] == player for i in range(4)):
           return True
 
     # diag down-right
     for r in range(ROWS - 3):
       for c in range(COLS - 3):
-        if all(B[r+i][c+i] == player for i in range(4)):
+        if all(B[r + i][c + i] == player for i in range(4)):
           return True
 
     # diag up-right
     for r in range(3, ROWS):
       for c in range(COLS - 3):
-        if all(B[r-i][c+i] == player for i in range(4)):
+        if all(B[r - i][c + i] == player for i in range(4)):
           return True
 
     return False
@@ -281,16 +348,14 @@ class Form1(Form1Template):
 
   @handle("play_again_button", "click")
   def play_again_button_click(self, **event_args):
-    # Just call the same start function (it resets everything)
-    self.start_new_game_click()
+    self._start_new_game()
 
   @handle("close_overlay_btn", "click")
   def close_overlay_btn_click(self, **event_args):
     self.hide_result_overlay()
+    self._set_column_buttons_enabled(True)
+    self.game_over = False
 
   @handle("back_Homepage", "click")
   def back_Homepage_click(self, **event_args):
-    open_form('Homepage')
-    pass
-
- 
+    open_form("Homepage")
