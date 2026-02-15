@@ -50,15 +50,27 @@ components:
         spacing:
           padding: [null, null, null, 13]
       type: RichText
-    - layout_properties: {grid_position: 'XQWEVP,VSTNRA'}
+    - data_bindings: []
+      event_bindings: {}
+      layout_properties: {grid_position: 'XQWEVP,VSTNRA'}
       name: rich_text_2
       properties:
         background: theme:Light Overlay 1
         content: |-
           To avoid storing duplicate positions, each board state is converted into a byte hash and used as a key in a lookup table. Instead of saving repeated boards multiple times, the system aggregates them. For each unique state, a 7-element count vector records how often MCTS selects each column. The final label can be assigned using a majority vote, and positions with low agreement can optionally be filtered out.
           The generator also supports horizontal symmetry augmentation by mirroring board states and corresponding column labels. Checkpoints are saved periodically so generation can resume if interrupted. After all games are completed, the aggregated states are converted into feature tensors and label arrays, resulting in a deduplicated and policy-consistent dataset suitable for supervised training.
+          <p>For this project, I built a Vision Transformer (ViT) to learn Connect 4 strategy from Monte Carlo Tree Search (MCTS) data...</p>
+
+          <ul>
+            <li><b>Board encoding:</b> <span class="anvil-role-inline-code">6×7×2</span></li>
+            <li><b>Channels:</b> Player +1 pieces, Player -1 pieces</li>
+            <li><b>Empty cells:</b> 0 in both channels</li>
+          </ul>
+        format: restricted_html
+        role: report-body
         spacing:
           padding: [null, null, null, 13]
+        tooltip: ''
       type: RichText
     layout_properties: {grid_position: 'YELVAO,EKXHVV IJPOSL,EMJLFU'}
     name: outlined_card_5
@@ -130,27 +142,45 @@ components:
       name: spacer_6
       properties: {height: 24.5}
       type: Spacer
-    - layout_properties: {}
-      name: lbl_trans
-      properties: {bold: false, role: report-title, text: Transformer Model, underline: false}
-      type: Label
-    - layout_properties: {}
-      name: label_3
-      properties: {role: report-subhead, text: Model Overview}
-      type: Label
-    - components: []
+    - components:
+      - layout_properties: {grid_position: 'UWLWWH,XNTVUG'}
+        name: lbl_trans
+        properties: {bold: false, role: report-title, text: Transformer Model, underline: false}
+        type: Label
+      - layout_properties: {grid_position: 'OIZWWA,PJCLWT'}
+        name: label_3
+        properties: {role: report-subhead, text: Model Overview}
+        type: Label
+      - components: []
+        layout_properties: {grid_position: 'NKKTKT,RLXNYI'}
+        name: trans_text
+        properties:
+          content: |
+            For this project, I built a Vision Transformer (ViT) to learn Connect 4 strategy from Monte Carlo Tree Search (MCTS) data. The transformer treats the Connect 4 board as an image and uses self-attention mechanisms to identify winning patterns.Unlike CNNs that use fixed convolutional filters, transformers use attention mechanisms that can dynamically focus on any part of the board. This is particularly useful for Connect 4, where the importance of a position depends heavily on context. A piece in column 3 might be critical for blocking an opponent's diagonal, but irrelevant in another game state.
+          format: restricted_html
+          role: report-body
+        type: RichText
       layout_properties: {}
-      name: trans_text
-      properties: {content: 'For this project, I built a Vision Transformer (ViT) to learn Connect 4 strategy from Monte Carlo Tree Search (MCTS) data. The transformer treats the Connect 4 board as an image and uses self-attention mechanisms to identify winning patterns.Unlike CNNs that use fixed convolutional filters, transformers use attention mechanisms that can dynamically focus on any part of the board. This is particularly useful for Connect 4, where the importance of a position depends heavily on context. A piece in column 3 might be critical for blocking an opponent''s diagonal, but irrelevant in another game state.', role: body-text}
-      type: RichText
-    - layout_properties: {}
-      name: label_5
-      properties: {text: Model Architecture}
-      type: Label
-    - layout_properties: {}
-      name: rich_text_6
-      properties: {content: 'The board is encoded as a 6×7×2 representation, where two channels are used to clearly distinguish between the players. Channel 0 contains Player +1’s pieces, marked with a value of 1 wherever their pieces are present, while Channel 1 contains Player −1’s pieces, also marked with a value of 1 at occupied positions. Empty cells are represented by 0 in both channels. This two-channel encoding allows the model to differentiate between players more effectively than a single-channel −1/0/+1 representation.'}
-      type: RichText
+      name: column_panel_1
+      properties: {role: report-card}
+      type: ColumnPanel
+    - components:
+      - layout_properties: {grid_position: 'BPRFHT,NDFGFZ'}
+        name: label_5
+        properties: {role: report-subhead, text: Model Architecture}
+        type: Label
+      - layout_properties: {grid_position: 'LNYCYQ,LYCYXU'}
+        name: label_8
+        properties: {role: report-subhead, text: Input Representation}
+        type: Label
+      - layout_properties: {grid_position: 'MCOPVF,QFNHNC'}
+        name: rich_text_6
+        properties: {content: ''}
+        type: RichText
+      layout_properties: {}
+      name: column_panel_2
+      properties: {role: report-card}
+      type: ColumnPanel
     - layout_properties: {}
       name: label_6
       properties: {text: Patch Strategy}
@@ -177,15 +207,6 @@ components:
         content: |-
           The dataset consisted of positions generated using Monte Carlo Tree Search. In total, there were 131,980 board positions, with 105,584 samples used for training and 26,396 reserved for validation, following an eighty twenty split. Each sample was labeled with the best move, represented as a column from zero through six, determined by Monte Carlo Tree Search visit counts. The dataset was loaded and preprocessed by decoding each board position from its binary representation into the 6 by 7 by 2 format. Each board was then converted into nine patches, where each patch represents a flattened 3 by 3 by 2 region containing 18 values. The data was randomly shuffled before being divided into training and validation sets. Training was performed using batches of 128 samples, resulting in 825 training batches and 207 validation batches per epoch.
           Training was implemented using PyTorch after switching from TensorFlow to ensure compatibility with AWS deployment. A batch size of 128 was used. Optimization was performed using the Adam optimizer with a learning rate of 0.0001. Early stopping was applied with a patience of five epochs while monitoring validation loss to prevent overfitting and to stop training once performance stopped improving.
-      type: RichText
-    - name: rich_text_9
-      properties: {}
-      type: RichText
-    - name: rich_text_10
-      properties: {}
-      type: RichText
-    - name: rich_text_11
-      properties: {}
       type: RichText
     - components:
       - name: repeating_panel_1
