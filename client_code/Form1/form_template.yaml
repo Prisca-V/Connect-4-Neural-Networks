@@ -25,7 +25,7 @@ components:
       type: ColumnPanel
     layout_properties: {grid_position: 'LXHQGU,BIDMTR'}
     name: result_overlay
-    properties: {role: elevated-card, visible: false}
+    properties: {role: elevated-card, visible: true}
     type: ColumnPanel
   - event_bindings: {}
     layout_properties: {grid_position: 'MYFLJA,YIWSGQ'}

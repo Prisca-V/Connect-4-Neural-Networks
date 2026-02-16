@@ -405,3 +405,12 @@ roles:
 - components: [Label]
   display_in_toolbox: true
   name: auth-footer
+- components: [ColumnPanel]
+  display_in_toolbox: true
+  name: result-card
+- components: [ColumnPanel]
+  display_in_toolbox: true
+  name: result-overlay
+- components: []
+  display_in_toolbox: true
+  name: win-msg

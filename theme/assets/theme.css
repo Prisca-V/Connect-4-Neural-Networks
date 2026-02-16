@@ -103,7 +103,13 @@ body {
   line-height: 1.4286;
   color: %color:On Surface%;
   background-color: %color:Background%;
-  min-height: calc(100vh - 56px)
+  min-height: calc(100vh - 56px);
+    
+  background-image: url("/_/theme/bg_img.jpg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;      /* or contain */
+  background-attachment: fixed;
 }
 
 @media print {
@@ -1495,4 +1501,20 @@ body, .anvil-container{
   color: #8a3a1b;
   font-weight: 700;
   text-align: center;
+}
+
+/* Right-side background panel 
+.side-bg {
+  background-image: url("/_/theme/GamePic1.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+
+  min-height: 100vh;
+} */
+
+.anvil-role-overlay-btn {
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 700;
 }
