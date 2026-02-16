@@ -47,6 +47,36 @@ components:
         spacing:
           padding: [null, null, null, 13]
       type: RichText
+    - layout_properties: {grid_position: 'SQBMWO,MHHGDS'}
+      name: report_body_2
+      properties:
+        content: |-
+          <div style="
+            background:#f4f7f9;
+            border:1px solid #dbe3e8;
+            border-radius:10px;
+            padding:16px;
+            font-family: 'Courier New', monospace;
+            font-size:14px;
+            line-height:1.5;
+            overflow-x:auto;
+          ">
+          X, Y, table = generate_connect4_dataset(
+              num_games=1500,
+              mcts_skill=1000,
+              num_random_opening_moves=4,
+              checkpoint_path="/content/drive/MyDrive/connect4/c4_ckpt5.pkl",
+              checkpoint_every=25,
+              strict_plus_only=False,
+              min_agreement=0.45,
+              augment_symmetry=True,
+              seed=42,
+              verbose=True
+          )
+          </div>
+        format: restricted_html
+        role: report-body
+      type: RichText
     - data_bindings: []
       event_bindings: {}
       layout_properties: {grid_position: 'XQWEVP,VSTNRA'}
