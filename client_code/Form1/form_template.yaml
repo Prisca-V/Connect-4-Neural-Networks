@@ -32,7 +32,7 @@ components:
     properties: {height: 149.70001220703125}
     type: Spacer
   - event_bindings: {}
-    layout_properties: {grid_position: 'MYFLJA,YIWSGQ'}
+    layout_properties: {grid_position: 'PPDKKM,XODZNC'}
     name: back_Homepage
     properties: {align: left, background: '#FF9800', bold: true, border: '200', role: elevated-button, text: Home Page}
     type: Button
