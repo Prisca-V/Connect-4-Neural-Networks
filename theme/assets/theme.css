@@ -434,7 +434,7 @@ color: %color:On Primary Container%;
   margin-bottom: 0;
 }
 
-.app-bar > .sidebar-toggle { display:block; float:left;  margin-left: -61px; }
+
 .app-bar > .top-left-btn { float: left; margin-left: -60px; margin-right: -40px; }
 .app-bar > .title { float: left; }
 .app-bar > .title > .placeholder { outline: 1px dotted; padding-left: 16px; padding-right: 16px; margin: 8px 8px 0; display:none; }
@@ -1524,10 +1524,10 @@ body, .anvil-container{
   font-weight: 700;
 }
 
-/* .anvil-role-page{
+.anvil-role-page{
   background-image: url("/_/theme/bg_img.jpg") !important;
   background-repeat: no-repeat;
   background-position: right center;
   background-size: contain;  
   background-attachment: fixed;
-} */
+}
