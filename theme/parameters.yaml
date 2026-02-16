@@ -389,3 +389,19 @@ roles:
 - components: [RichText]
   display_in_toolbox: true
   name: report-body
+- {name: auth-page}
+- components: [ColumnPanel]
+  display_in_toolbox: true
+  name: auth-card
+- components: [Label]
+  display_in_toolbox: true
+  name: auth-title
+- components: [Label]
+  display_in_toolbox: true
+  name: auth-subtitle
+- components: [TextBox]
+  display_in_toolbox: true
+  name: auth-input
+- components: [Label]
+  display_in_toolbox: true
+  name: auth-footer

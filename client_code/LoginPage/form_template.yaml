@@ -1,12 +1,8 @@
 components:
-- layout_properties: {grid_position: 'FMUJHA,RASGEL'}
-  name: spacer_2
-  properties: {height: 69.5}
-  type: Spacer
 - components:
   - layout_properties: {grid_position: 'IQIVXZ,HSUSEZ'}
     name: spacer_1
-    properties: {height: '150'}
+    properties: {height: 61.5}
     type: Spacer
   - layout_properties: {grid_position: 'MTFYGS,JUKFXV'}
     name: Title_Login
@@ -14,44 +10,43 @@ components:
     type: Label
   - layout_properties: {grid_position: 'JQPERS,NKMOBP'}
     name: instructions
-    properties: {align: center, role: subhead, text: Please enter your email and passward}
+    properties: {align: center, role: auth-subtitle, text: Please enter your email and password}
     type: Label
-  - components:
-    - event_bindings: {}
-      layout_properties: {grid_position: 'HSBGEI,HOTYLI'}
-      name: Email
-      properties: {align: center, placeholder: Email, text: ''}
-      type: TextBox
-    - event_bindings: {}
-      layout_properties: {grid_position: 'BZACAB,CRIJZZ'}
-      name: Password
-      properties: {align: center, hide_text: true, placeholder: Passward}
-      type: TextBox
-    - event_bindings: {}
-      layout_properties: {grid_position: 'INKXUO,OLGYLN'}
-      name: login_btn
-      properties: {align: full, role: filled-button, text: Login}
-      type: Button
-    layout_properties: {grid_position: 'VPFUAN,KBELGN'}
-    name: column_panel_1
+  - event_bindings: {}
+    layout_properties: {grid_position: 'BLRNEU,VSTCJF'}
+    name: Email
+    properties: {align: center, placeholder: Email, role: auth-input, text: ''}
+    type: TextBox
+  - event_bindings: {}
+    layout_properties: {grid_position: 'EIUMUQ,WSGETF'}
+    name: Password
     properties:
-      role: elevated-card
-      spacing:
-        padding: [null, 130, null, null]
-    type: ColumnPanel
-  - layout_properties: {grid_position: 'VOPQUK,QXUCXX'}
-    name: spacer_4
-    properties: {height: 65}
-    type: Spacer
+      align: center
+      hide_text: true
+      margin: [null, 0, null, 0]
+      placeholder: Password
+      role: auth-input
+    type: TextBox
+  - event_bindings: {}
+    layout_properties: {grid_position: 'MFBHPJ,RFXJWN'}
+    name: login_btn
+    properties: {align: full, role: primary-btn, text: Login}
+    type: Button
   - layout_properties: {grid_position: 'RXZUVT,DSKTEB'}
     name: created_by
-    properties: {align: right, role: caption, text: 'Created By: Shruthi, Prisca, Sam, Christian'}
+    properties: {align: right, role: auth-footer, text: 'Created By: Shruthi, Prisca, Sam, Christian'}
     type: Label
-  layout_properties: {grid_position: 'ERPARJ,JYAATP'}
+  layout_properties: {full_width_row: true, grid_position: 'ERPARJ,JYAATP'}
   name: column_panel_2
-  properties: {role: page}
+  properties: {role: auth-card}
   type: ColumnPanel
 container:
-  properties: {col_widths: '{}', role: null}
+  properties:
+    col_widths: '{}'
+    role: auth-page
+    spacing:
+      padding: [null, 0, null, null]
+    spacing_above: none
+    spacing_below: none
   type: ColumnPanel
 is_package: true

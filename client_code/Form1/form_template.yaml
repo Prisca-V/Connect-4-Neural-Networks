@@ -485,7 +485,7 @@ components:
   - event_bindings: {}
     layout_properties: {grid_position: 'NUXGWG,JQUYXY'}
     name: test_health
-    properties: {text: button_8, visible: true}
+    properties: {enabled: false, text: button_8, visible: false}
     type: Button
   layout_properties: {grid_position: 'AVRHQV,DYRERN', row_background: '#1a1a2e'}
   name: column_panel_1
