@@ -111,19 +111,22 @@
         $('.content').css({'margin-top': topMargin.toString() + 'px'});
       }
     } else {
-      //if the window is big, add margin to content and left-nav for app bar
+      // desktop
       $('.content').css({'margin-top': appBar.clientHeight.toString() + 'px'});
-      ln.css({'top': topMargin.toString() + 'px'})
+      ln.css({'top': topMargin.toString() + 'px'});
+
       if (window.anvilInDesigner) {
-        //if in the designer, add left margin for either the left-nav or the placeholder
+        // keep designer behavior so you can still drop a sidebar in the editor
         $('.content').css({'margin-left': Math.max(ln.outerWidth(), lnp.outerWidth()).toString() + 'px'});
       } else {
-        //if not in the designer, only add margin for the left-nav because placeholder still has a width outside of designer
-        $('.content').css({'margin-left': ln.outerWidth() + 'px'});
+        // ONLY reserve space if sidebar actually has something inside it
+        if (ln.children().length > 0 && ln.is(":visible")) {
+          $('.content').css({'margin-left': ln.outerWidth() + 'px'});
+        } else {
+          $('.content').css({'margin-left': '0px'});
+        }
       }
     }
-  }
-  
   addMarginToContent()
   window.addEventListener('resize', addMarginToContent);
  

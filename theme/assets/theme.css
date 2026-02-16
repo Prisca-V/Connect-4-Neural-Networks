@@ -1531,3 +1531,13 @@ body, .anvil-container{
   background-size: contain;  
   background-attachment: fixed;
 }
+
+/* Hide sidebar + placeholder completely */
+.left-nav, .left-nav-placeholder, .nav-shield { 
+  display: none !important; 
+}
+
+/* Don’t leave blank space */
+.content {
+  margin-left: 0 !important;
+}
