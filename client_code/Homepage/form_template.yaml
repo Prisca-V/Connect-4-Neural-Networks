@@ -5,9 +5,9 @@ components:
     properties: {height: 68}
     type: Spacer
   - components:
-    - layout_properties: {grid_position: 'SMNRIB,ZFSSST'}
+    - layout_properties: {grid_position: 'SMNRIB,JMGYUO'}
       name: headline_1
-      properties: {role: game-title, text: Report}
+      properties: {role: auth-title, text: REPORT}
       type: Label
     - event_bindings: {}
       layout_properties: {grid_position: 'SMNRIB,HITQSP'}
@@ -299,11 +299,11 @@ components:
         type: RichText
       - layout_properties: {grid_position: 'MNWUCX,FLMMEX'}
         name: image_7
-        properties: {display_mode: fill_width, source: _/theme/Screenshot 2026-02-15 200851.png}
+        properties: {display_mode: original_size, source: _/theme/cropped_rect_1.png}
         type: Image
       - layout_properties: {grid_position: 'MNWUCX,HMBOOQ'}
         name: image_8
-        properties: {display_mode: fill_width, source: _/theme/Screenshot 2026-02-15 201056.png}
+        properties: {display_mode: original_size, source: _/theme/cropped_rect_2.png}
         type: Image
       - layout_properties: {grid_position: 'HYHHKF,EELXLE'}
         name: report_body_8
