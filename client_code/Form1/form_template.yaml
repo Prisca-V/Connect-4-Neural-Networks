@@ -494,9 +494,9 @@ components:
     type: Button
   layout_properties: {full_width_row: true, grid_position: 'AVRHQV,NMHPYW'}
   name: column_panel_1
-  properties: {background: '#D1EAF2', border: '', role: page}
+  properties: {background: '#D1EAF2', border: '', role: null}
   type: ColumnPanel
 container:
-  properties: {background: '#D1EAF2', border: ''}
+  properties: {background: '#D1EAF2', border: '', role: null}
   type: ColumnPanel
 is_package: true
