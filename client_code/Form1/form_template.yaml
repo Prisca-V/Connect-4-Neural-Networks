@@ -57,6 +57,7 @@ components:
     name: game_mode_dropdown
     properties:
       align: left
+      background: '#ba5ce6'
       include_placeholder: true
       items: ['', '']
       placeholder: Select Game Mode

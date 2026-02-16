@@ -1462,3 +1462,37 @@ body, .anvil-container{
   background-color: white !important;
   box-shadow: 0 0 0 3px rgba(26,163,168,0.18);
 }
+
+.anvil-role-result-overlay {
+  background: rgba(20, 40, 60, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+.anvil-role-result-card {
+  border-radius: 18px;
+  padding: 26px 24px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(15,23,42,0.08);
+  box-shadow: 0 12px 28px rgba(15,23,42,0.12);
+  text-align: center;
+}
+
+.anvil-role-win-msg textarea,
+.anvil-role-win-msg input {
+  border-radius: 14px;
+  background: rgba(80, 180, 120, 0.12);
+  border: 1px solid rgba(80, 180, 120, 0.35);
+  color: #1f6b46;
+  font-weight: 700;
+  text-align: center;
+}
+
+.anvil-role-lose-msg textarea,
+.anvil-role-lose-msg input {
+  border-radius: 14px;
+  background: rgba(255, 150, 90, 0.12);
+  border: 1px solid rgba(255, 150, 90, 0.35);
+  color: #8a3a1b;
+  font-weight: 700;
+  text-align: center;
+}
