@@ -1074,7 +1074,12 @@ div.plot-container.plotly svg.main-svg {
     radial-gradient(900px 600px at 20% 15%, var(--vignette), transparent 60%),
     radial-gradient(700px 500px at 85% 20%, rgba(0, 180, 190, 0.14), transparent 55%),
     radial-gradient(700px 500px at 55% 90%, rgba(0, 160, 175, 0.12), transparent 60%),
+    url("/_/theme/bg_img.jpg"),
     linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover; /* use cover if you want it full */
+  background-attachment: fixed;
   color: var(--text);
 }
 /* --- Global vibe tokens --- */

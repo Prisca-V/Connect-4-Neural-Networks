@@ -411,6 +411,12 @@ roles:
 - components: [ColumnPanel]
   display_in_toolbox: true
   name: result-overlay
-- components: []
+- components: [TextArea, TextBox, Label]
   display_in_toolbox: true
   name: win-msg
+- components: [Button]
+  display_in_toolbox: true
+  name: overlay-btn
+- components: [TextArea, TextBox, Label]
+  display_in_toolbox: true
+  name: loser-msg

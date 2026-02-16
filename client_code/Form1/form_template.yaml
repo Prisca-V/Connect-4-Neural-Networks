@@ -4,7 +4,7 @@ components:
     - components:
       - layout_properties: {grid_position: 'WGZGHQ,UVYHJZ'}
         name: win_msg
-        properties: {role: outlined, text: GAME OVER! YOU WON!, visible: false}
+        properties: {role: win-msg, text: GAME OVER! YOU WON!, visible: false}
         type: TextBox
       - layout_properties: {grid_position: 'KSSEFW,OMMFRM'}
         name: loser_msg
