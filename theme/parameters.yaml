@@ -352,9 +352,7 @@ roles:
 - components: [Outlined Card]
   display_in_toolbox: true
   name: call
-- components: [ColumnPanel]
-  display_in_toolbox: true
-  name: page
+- {components: null, display_in_toolbox: true, name: page}
 - components: [ColumnPanel]
   display_in_toolbox: true
   name: board-wrap
