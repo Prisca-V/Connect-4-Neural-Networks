@@ -539,7 +539,7 @@ components:
           display_mode: fill_width
           height: 363.5
           margin: [0, null, 0, null]
-          source: _/theme/Screenshot 2026-02-15 174850.png
+          source: _/theme/cropped_2.png
         type: Image
       - components: []
         layout_properties: {grid_position: 'SDOFYV,YSUWQU'}
@@ -555,11 +555,11 @@ components:
         type: RichText
       - layout_properties: {grid_position: 'SFPGLD,EWVMEP'}
         name: image_5
-        properties: {source: _/theme/Screenshot 2026-02-15 175951.png}
+        properties: {display_mode: fill_width, source: _/theme/cropped_3.png}
         type: Image
       - layout_properties: {grid_position: 'SFPGLD,FKAPBT'}
         name: image_6
-        properties: {source: _/theme/Screenshot 2026-02-15 180051.png}
+        properties: {display_mode: fill_width, source: _/theme/cropped_4.png}
         type: Image
       - layout_properties: {grid_position: 'KJVSTU,HKEXUD'}
         name: label_11
