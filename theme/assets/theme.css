@@ -1341,7 +1341,7 @@ body, .anvil-container{
   border-radius: 22px;
 
   background: rgba(255,255,255,0.78);
-  border: 1px solid rgba(15,23,42,0.10);
+  border: 1px solid #CFE6E6;
 
   box-shadow: 0 18px 40px rgba(15,23,42,0.12);
   backdrop-filter: blur(10px);
@@ -1439,4 +1439,27 @@ body, .anvil-container{
   color: rgba(15,23,42,0.45);
   margin-top: 14px;
   text-transform: uppercase;
+}
+/* Target Anvil Material text fields */
+.anvil-role-auth-input input {
+  background-color: rgba(255,255,255,0.75) !important;
+  border-radius: 12px !important;
+}
+
+/* Material wrapper background */
+.anvil-role-auth-input .mat-form-field-flex {
+  background-color: rgba(255,255,255,0.75) !important;
+  border-radius: 12px !important;
+  padding: 6px 10px;
+}
+
+/* Border */
+.anvil-role-auth-input .mat-form-field-outline {
+  color: rgba(0,120,130,0.35) !important;
+}
+
+/* Focus glow */
+.anvil-role-auth-input.mat-focused .mat-form-field-flex {
+  background-color: white !important;
+  box-shadow: 0 0 0 3px rgba(26,163,168,0.18);
 }
