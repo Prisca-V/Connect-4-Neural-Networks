@@ -531,7 +531,7 @@ components:
         type: RichText
       - layout_properties: {grid_position: 'YXTRYU,XYKEGZ'}
         name: image_1
-        properties: {display_mode: fill_width, height: 387, source: _/theme/Screenshot 2026-02-15 174804.png}
+        properties: {display_mode: fill_width, height: 165, source: _/theme/cropped_1.png}
         type: Image
       - layout_properties: {grid_position: 'YXTRYU,MVVAXD'}
         name: image_4
