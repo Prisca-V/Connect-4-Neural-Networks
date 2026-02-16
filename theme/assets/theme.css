@@ -1523,3 +1523,11 @@ body, .anvil-container{
   padding: 8px 18px;
   font-weight: 700;
 }
+
+/* .anvil-role-page{
+  background-image: url("/_/theme/bg_img.jpg") !important;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;  
+  background-attachment: fixed;
+} */
