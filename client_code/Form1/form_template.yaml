@@ -8,7 +8,7 @@ components:
         type: TextBox
       - layout_properties: {grid_position: 'KSSEFW,OMMFRM'}
         name: loser_msg
-        properties: {role: outlined, text: GAME OVER! YOU LOST!, visible: false}
+        properties: {role: loser-msg, text: GAME OVER! YOU LOST!, visible: false}
         type: TextBox
       - event_bindings: {}
         layout_properties: {grid_position: 'RBKYLI,JZGYDO'}
@@ -25,7 +25,7 @@ components:
       type: ColumnPanel
     layout_properties: {grid_position: 'LXHQGU,BIDMTR'}
     name: result_overlay
-    properties: {role: elevated-card, visible: true}
+    properties: {role: elevated-card, visible: false}
     type: ColumnPanel
   - event_bindings: {}
     layout_properties: {grid_position: 'MYFLJA,YIWSGQ'}
