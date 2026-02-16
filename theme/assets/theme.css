@@ -1440,18 +1440,22 @@ body, .anvil-container{
   margin-top: 14px;
   text-transform: uppercase;
 }
-/* themed login inputs */
+/* container */
 .anvil-role-auth-input {
-  background-color: rgba(255,255,255,0.65);
-  border: 1px solid rgba(0, 120, 130, 0.25);
   border-radius: 10px;
-  padding: 10px 12px;
-  transition: all 0.2s ease;
+  overflow: hidden;
 }
 
-/* focus glow */
-.anvil-role-auth-input:focus-within {
-  background-color: white;
+/* actual input field */
+.anvil-role-auth-input input {
+  background-color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0, 120, 130, 0.35);
+  padding: 10px;
+}
+
+/* focus effect */
+.anvil-role-auth-input input:focus {
+  outline: none;
   border-color: #1aa3a8;
   box-shadow: 0 0 0 3px rgba(26,163,168,0.15);
 }
