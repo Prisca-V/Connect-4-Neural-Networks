@@ -1482,28 +1482,34 @@ body, .anvil-container{
 .anvil-role-result-card {
   border-radius: 18px;
   padding: 26px 24px;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(15,23,42,0.08);
-  box-shadow: 0 12px 28px rgba(15,23,42,0.12);
+
+  background: rgba(8, 28, 38, 0.82);   /* deep teal glass */
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(120, 220, 255, 0.18);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.45),
+    0 0 18px rgba(0,200,255,0.15);
+
+  color: #e9f7ff;
   text-align: center;
 }
 
-.anvil-role-win-msg textarea,
 .anvil-role-win-msg input {
   border-radius: 14px;
-  background: rgba(80, 180, 120, 0.12);
-  border: 1px solid rgba(80, 180, 120, 0.35);
-  color: #1f6b46;
+  background: rgba(80, 255, 170, 0.12);
+  border: 1px solid rgba(80, 255, 170, 0.45);
+  color: #7CFFD0;
   font-weight: 700;
   text-align: center;
 }
 
-.anvil-role-lose-msg textarea,
 .anvil-role-lose-msg input {
   border-radius: 14px;
-  background: rgba(255, 150, 90, 0.12);
-  border: 1px solid rgba(255, 150, 90, 0.35);
-  color: #8a3a1b;
+  background: rgba(255, 160, 90, 0.12);
+  border: 1px solid rgba(255, 160, 90, 0.45);
+  color: #FFC3A0;
   font-weight: 700;
   text-align: center;
 }
@@ -1538,6 +1544,18 @@ body, .anvil-container{
 }
 
 /* Don’t leave blank space */
+.content {
+  margin-left: 0 !important;
+}
+
+/* REMOVE sidebar completely */
+.left-nav,
+.left-nav-placeholder,
+.nav-shield {
+  display: none !important;
+}
+
+/* Remove the reserved left margin */
 .content {
   margin-left: 0 !important;
 }

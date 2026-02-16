@@ -4,11 +4,11 @@ components:
     - components:
       - layout_properties: {grid_position: 'WGZGHQ,UVYHJZ'}
         name: win_msg
-        properties: {role: win-msg, text: GAME OVER! YOU WON!, visible: false}
+        properties: {enabled: false, role: win-msg, text: GAME OVER! YOU WON!, visible: false}
         type: TextBox
       - layout_properties: {grid_position: 'KSSEFW,OMMFRM'}
         name: loser_msg
-        properties: {role: loser-msg, text: GAME OVER! YOU LOST!, visible: false}
+        properties: {enabled: false, role: loser-msg, text: GAME OVER! YOU LOST!, visible: false}
         type: TextBox
       - event_bindings: {}
         layout_properties: {grid_position: 'RBKYLI,JZGYDO'}
@@ -21,11 +21,11 @@ components:
         type: Button
       layout_properties: {grid_position: 'AFVYJT,HRWYFU'}
       name: result_card
-      properties: {}
+      properties: {role: result-card}
       type: ColumnPanel
     layout_properties: {grid_position: 'LXHQGU,BIDMTR'}
     name: result_overlay
-    properties: {role: outlined-card, visible: false}
+    properties: {role: result-overlay, visible: false}
     type: ColumnPanel
   - layout_properties: {grid_position: 'GQQJAR,XZEIFI'}
     name: spacer_44
@@ -492,7 +492,7 @@ components:
     name: test_health
     properties: {enabled: false, text: button_8, visible: false}
     type: Button
-  layout_properties: {full_width_row: true, grid_position: 'AVRHQV,MLSVPO'}
+  layout_properties: {full_width_row: true, grid_position: 'AVRHQV,NMHPYW'}
   name: column_panel_1
   properties: {background: '#D1EAF2', border: '', role: page}
   type: ColumnPanel
