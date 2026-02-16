@@ -78,7 +78,7 @@ components:
     - components:
       - layout_properties: {grid_position: 'KPMLVQ,MVHTOR'}
         name: lbl_cnn
-        properties: {bold: false, role: report-title, text: Convolutional Neural Network-CNN, underline: false}
+        properties: {bold: false, role: report-title, text: Convolutional Neural Network(CNN), underline: false}
         type: Label
       - layout_properties: {grid_position: 'IOMQTA,BSCAXG'}
         name: label_12
@@ -87,7 +87,19 @@ components:
       - layout_properties: {grid_position: 'JUUJDD,PTYSIG'}
         name: cnn_text
         properties:
-          content: '***'
+          content: |
+            <p>
+            For this project, I built a Convolutional Neural Network (CNN) to learn Connect 4 strategies from MCTS data.
+            </p>
+
+            <p>
+            CNNs learn through localized convolutional filters that detect spatial patterns. This makes them a natural fit for board games like Connect 4, where winning configurations consist of spatially local patterns such as horizontal, vertical, and diagonal four-in-a-row sequences.
+            </p>
+
+            <p>
+            In my model, the early layers detect simple piece configurations, the middle layers detect partial threats (three-in-a-row, open-ended patterns), and the deeper layers combine these into higher-level tactical patterns.
+            </p>
+          format: restricted_html
           role: report-body
           spacing:
             padding: [null, 0, null, null]
@@ -96,29 +108,60 @@ components:
         name: label_13
         properties: {role: report-subhead, text: Model Architecture}
         type: Label
-      - layout_properties: {grid_position: 'WYRBET,CIWOWJ'}
-        name: caption_1
-        properties: {role: caption, text: Input Representation}
-        type: Label
       - layout_properties: {grid_position: 'XFFNIZ,SXMXLQ'}
         name: report_body_1
-        properties: {role: report-body}
-        type: RichText
-      - layout_properties: {grid_position: 'DTEEYP,HSKXZI'}
-        name: caption_2
-        properties: {role: caption, text: Patch Strategy}
-        type: Label
-      - layout_properties: {grid_position: 'SVBBPF,DMMOXV'}
-        name: report_body_2
-        properties: {role: report-body}
-        type: RichText
-      - layout_properties: {grid_position: 'WDDVNI,ZHHDKC'}
-        name: caption_3
-        properties: {role: caption, text: Transformer Configuration}
-        type: Label
-      - layout_properties: {grid_position: 'ITJRFP,LVQYAR'}
-        name: report_body_3
-        properties: {role: report-body}
+        properties:
+          content: |-
+            <p><b>CNN Configuration</b></p>
+
+            <p class="anvil-role-report-body">
+            Below is the final CNN architecture used to predict the best Connect 4 move (7-class classification, one logit per column).
+            </p>
+
+            <p><b>Final Architecture (PyTorch-style)</b></p>
+            <pre style="background: rgba(15,23,42,0.04); border: 1px solid rgba(15,23,42,0.08); border-radius: 14px; padding: 12px 14px; overflow-x:auto; font-size: 13.5px; line-height: 1.5;">
+            Input: 6 × 7 board (2 channels)
+
+            Conv Block 1:
+              Conv2d(2 → 64, kernel=3×3, padding=1)
+              ReLU
+
+            Conv Block 2:
+              Conv2d(64 → 128, kernel=3×3, padding=1)
+              ReLU
+
+            Conv Block 3:
+              Conv2d(128 → 256, kernel=3×3, padding=1)
+              ReLU
+
+            Flatten:
+              256 × 6 × 7 = 10,752
+
+            Fully Connected Layers:
+              Linear(10,752 → 256)
+              Dropout(0.4)
+              Linear(256 → 128)
+              Dropout(0.3)
+              Linear(128 → 7)
+
+            Output:
+              Clamp logits to [-10, 10]
+              Softmax → probability distribution over columns
+            </pre>
+
+            <div style="height:10px;"></div>
+
+            <p><b>Key Design Decisions</b></p>
+            <ul>
+              <li><b>3×3 kernels:</b> capture local spatial relationships (adjacent pieces and short threats).</li>
+              <li><b>Padding = 1:</b> preserves board dimensions (6×7) across convolution layers.</li>
+              <li><b>Increasing channel depth (64 → 128):</b> enables learning richer pattern combinations (horizontal/vertical/diagonal motifs).</li>
+              <li><b>Batch Normalization:</b> stabilizes training and improves convergence.</li>
+              <li><b>Dropout (0.3):</b> reduces overfitting by regularizing the dense layers.</li>
+              <li><b>Final output (7 units):</b> produces one logit per column (softmax for move selection).</li>
+            </ul>
+          format: restricted_html
+          role: report-body
         type: RichText
       - layout_properties: {grid_position: 'XJRAKV,XFTBTF'}
         name: report_subhead_1
@@ -126,7 +169,46 @@ components:
         type: Label
       - layout_properties: {grid_position: 'LWYIDX,OGZVPT'}
         name: report_body_4
-        properties: {role: report-body}
+        properties:
+          content: |
+            <p><b>Dataset</b></p>
+
+            <ul>
+              <li>Total board positions: <b>131,980</b></li>
+              <li>Board shape: 6 × 7</li>
+              <li>Labels: best move (column 0–6) determined by MCTS</li>
+            </ul>
+
+            <p>
+            The dataset was shuffled and split into training and validation sets. Board states were converted into the 6 × 7 × 2 format and fed directly into the CNN.
+            </p>
+
+            <div style="height:10px;"></div>
+
+            <p><b>Training Details</b></p>
+
+            <ul>
+              <li>Framework: PyTorch</li>
+              <li>Optimizer: Adam with learning rate 0.0001</li>
+              <li>Early stopping enabled</li>
+              <li>Model saved as: <span style="font-family: monospace; color:#1F8F95;">connect4_cnn_pytorch.pt</span></li>
+            </ul>
+
+            <div style="height:10px;"></div>
+
+            <p><b>Training Progression</b></p>
+
+            <ul>
+              <li>Initial validation loss: 1.7639</li>
+              <li>Final validation loss: 1.6029</li>
+              <li>Early stopping triggered at epoch 46</li>
+            </ul>
+
+            <p>
+            Both training and validation loss decreased steadily, indicating stable convergence. The relatively small gap between training and validation loss suggests limited overfitting and good generalization.
+            </p>
+          format: restricted_html
+          role: report-body
         type: RichText
       - layout_properties: {grid_position: 'LUXLXP,EDRRNZ'}
         name: report_subhead_2
@@ -134,7 +216,35 @@ components:
         type: Label
       - layout_properties: {grid_position: 'TFFWEU,GTYTAS'}
         name: report_body_5
-        properties: {role: report-body}
+        properties:
+          content: |-
+            <p><b>Local Pattern Recognition</b></p>
+
+            <p>
+            Convolutional neural networks are highly effective at identifying spatial patterns. The model quickly learned to recognize horizontal threats, vertical stacking opportunities, diagonal formations, and immediate blocking moves. Because Connect 4 is fundamentally spatial, convolutional filters are well suited to this task.
+            </p>
+
+            <div style="height:10px;"></div>
+
+            <p><b>Stable Convergence</b></p>
+
+            <p>
+            Training progressed smoothly and consistently. Validation loss decreased steadily across epochs with no major oscillations. Batch normalization significantly improved stability and learning speed.
+            </p>
+
+            <div style="height:10px;"></div>
+
+            <p><b>Efficient Architecture</b></p>
+
+            <p>
+            The model achieved strong performance using only three convolutional layers and two fully connected layers.
+            </p>
+
+            <p>
+            Compared to the transformer model, the CNN is simpler, faster to train, and requires less computational resources.
+            </p>
+          format: restricted_html
+          role: report-body
         type: RichText
       - layout_properties: {grid_position: 'EIBRIU,POMYEP'}
         name: label_14
@@ -142,7 +252,27 @@ components:
         type: Label
       - layout_properties: {grid_position: 'SPMYTF,DRPJIR'}
         name: report_body_6
-        properties: {role: report-body}
+        properties:
+          content: |-
+            <p><b>Limited Long Range Strategic Reasoning</b></p>
+
+            <p>
+            Convolutional neural networks build global understanding by stacking local filters. While deeper layers expand the receptive field, the model still struggles with planning moves that require long term strategy.
+            </p>
+
+            <p>
+            Like the transformer model, it performs well at identifying immediate wins and blocks, but has difficulty with multi step traps, sacrificial setups, and long term positional advantages.
+            </p>
+
+            <div style="height:10px;"></div>
+
+            <p><b>Ambiguous Midgame Boards</b></p>
+
+            <p>
+            Analysis of the difficult board examples shows many playable columns with no immediate win and multiple strategically reasonable moves. In these positions, the model often predicts a move different from MCTS. For example, low confidence predictions (approximately 15 percent) can reflect confusion between symmetric options or the selection of playable but non optimal columns. These moves should not be considered incorrect. Instead, they represent reasonable alternatives that differ from the highest visit MCTS choice.
+            </p>
+          format: restricted_html
+          role: report-body
         type: RichText
       - layout_properties: {grid_position: 'JYOIFT,RUJUGR'}
         name: label_15
@@ -150,35 +280,71 @@ components:
         type: Label
       - layout_properties: {grid_position: 'WERNGA,BPHLTF'}
         name: report_body_7
-        properties: {role: report-body}
+        properties:
+          content: |-
+            <p><b>Difficult Boards</b></p>
+
+            <p>
+            The most challenging board positions tend to share the following characteristics:
+            </p>
+
+            <ul>
+              <li>Many valid moves</li>
+              <li>No forced win</li>
+              <li>Strategic depth requiring two to three moves ahead</li>
+              <li>Symmetry or near symmetry</li>
+            </ul>
+          format: restricted_html
+          role: report-body
         type: RichText
       - layout_properties: {grid_position: 'MNWUCX,FLMMEX'}
         name: image_7
-        properties: {}
+        properties: {display_mode: fill_width, source: _/theme/Screenshot 2026-02-15 200851.png}
         type: Image
       - layout_properties: {grid_position: 'MNWUCX,HMBOOQ'}
         name: image_8
-        properties: {}
+        properties: {display_mode: fill_width, source: _/theme/Screenshot 2026-02-15 201056.png}
         type: Image
       - layout_properties: {grid_position: 'HYHHKF,EELXLE'}
         name: report_body_8
-        properties: {role: report-body}
+        properties:
+          content: |-
+            <p>
+            The CNN sometimes distributes probability across multiple reasonable columns, resulting in low confidence predictions.
+            </p>
+
+            <p>
+            This reflects a limitation of supervised learning on static snapshots: the CNN observes only the current board state and does not evaluate future consequences.
+            </p>
+          format: restricted_html
+          role: report-body
         type: RichText
-      - layout_properties: {grid_position: 'VCIJYC,GGFCVE'}
-        name: image_3
-        properties: {}
-        type: Image
-      - layout_properties: {grid_position: 'VCIJYC,BXFNOP'}
-        name: image_2
-        properties: {}
-        type: Image
       - layout_properties: {grid_position: 'YNAIID,YYXDRU'}
         name: label_16
         properties: {role: report-subhead, text: Final Performance}
         type: Label
       - layout_properties: {grid_position: 'ZOBXSL,PMKLII'}
         name: rich_text_1
-        properties: {content: Board Analysis, role: report-body}
+        properties:
+          content: |-
+            <p><b>Training Results</b></p>
+
+            <ul>
+              <li>Final training loss: <b>1.5069</b></li>
+              <li>Final validation loss: <b>1.6029</b></li>
+            </ul>
+
+            <p>
+            The CNN significantly reduces loss relative to an untrained model and demonstrates strong learning of tactical Connect 4 patterns. The close alignment between training and validation loss suggests:
+            </p>
+
+            <ul>
+              <li>Good generalization</li>
+              <li>Effective regularization (dropout 0.3)</li>
+              <li>Appropriate model capacity</li>
+            </ul>
+          format: restricted_html
+          role: report-body
         type: RichText
       name: column_panel_1
       properties: {role: report-card}
@@ -365,11 +531,15 @@ components:
         type: RichText
       - layout_properties: {grid_position: 'YXTRYU,XYKEGZ'}
         name: image_1
-        properties: {source: _/theme/Screenshot 2026-02-15 174804.png}
+        properties: {display_mode: fill_width, height: 387, source: _/theme/Screenshot 2026-02-15 174804.png}
         type: Image
       - layout_properties: {grid_position: 'YXTRYU,MVVAXD'}
         name: image_4
-        properties: {source: _/theme/Screenshot 2026-02-15 174850.png}
+        properties:
+          display_mode: fill_width
+          height: 363.5
+          margin: [0, null, 0, null]
+          source: _/theme/Screenshot 2026-02-15 174850.png
         type: Image
       - components: []
         layout_properties: {grid_position: 'SDOFYV,YSUWQU'}

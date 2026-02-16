@@ -1118,13 +1118,12 @@ div.plot-container.plotly svg.main-svg {
   box-shadow: 0 0 0 4px rgba(0,180,190,0.18) !important;
 }
 
-/* Primary button */
 .anvil-role-primary-btn{
   border-radius: 999px !important;
   padding: 10px 16px !important;
-  border: 1px solid rgba(0, 180, 190, 0.35) !important;
-  background: linear-gradient(135deg, rgba(0,180,190,0.95), rgba(0,128,140,0.95)) !important;
-  box-shadow: 0 10px 22px rgba(0, 120, 130, 0.20) !important;
+  border: 1px solid rgba(42,166,166,0.30) !important;
+  background: linear-gradient(135deg, #4FA3A6, #3B8E92) !important;
+  box-shadow: 0 6px 16px rgba(31,143,149,0.18) !important;
 }
 .anvil-role-primary-btn:hover{
   transform: translateY(-1px);
@@ -1343,7 +1342,7 @@ body, .anvil-container{
   background: rgba(255,255,255,0.78);
   border: 1px solid #CFE6E6;
 
-  box-shadow: 0 18px 40px rgba(15,23,42,0.12);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.08);
   backdrop-filter: blur(10px);
 }
 
