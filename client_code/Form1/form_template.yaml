@@ -497,6 +497,11 @@ components:
   properties: {background: 'theme:On Primary Container', border: '', role: game-bg}
   type: ColumnPanel
 container:
-  properties: {background: 'theme:On Primary Container', border: '', role: game-bg}
+  properties:
+    background: theme:On Primary Container
+    border: ''
+    role: game-bg
+    spacing:
+      padding: [null, 97, null, 0]
   type: ColumnPanel
 is_package: true
