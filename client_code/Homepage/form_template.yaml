@@ -687,7 +687,7 @@ components:
     type: LinearPanel
   layout_properties: {slot: default}
   name: home
-  properties: {background: '#1a1a2e', col_widths: '{}', role: page}
+  properties: {background: '#1a1a2e', col_widths: '{}', role: game-bg}
   type: ColumnPanel
 container:
   properties: {html: '@theme:standard-page.html'}

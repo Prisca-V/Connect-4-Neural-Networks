@@ -1530,11 +1530,13 @@ body, .anvil-container{
   font-weight: 700;
 }
 
-.anvil-role-page{
-  background-image: url("/_/theme/bg_img.jpg") !important;
+/* Game background */
+.anvil-role-game-bg{
+  min-height: 100vh;
+  background-image: url("/_/theme/bg_img.jpg");
   background-repeat: no-repeat;
-  background-position: right center;
-  background-size: cover;   
+  background-position: center center;
+  background-size: cover;
   background-attachment: fixed;
 }
 
@@ -1546,6 +1548,7 @@ body, .anvil-container{
 /* Don’t leave blank space */
 .content {
   margin-left: 0 !important;
+
 }
 
 /* REMOVE sidebar completely */

@@ -414,3 +414,4 @@ roles:
 - components: [TextArea, TextBox, Label]
   display_in_toolbox: true
   name: loser-msg
+- {components: null, display_in_toolbox: true, name: game-bg}
