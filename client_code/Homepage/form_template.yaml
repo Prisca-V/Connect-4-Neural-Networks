@@ -27,6 +27,10 @@ components:
     properties: {role: report-title, text: Data Generation}
     type: Label
   - components:
+    - layout_properties: {grid_position: 'AFFEHR,VSBEJK'}
+      name: caption_4
+      properties: {role: caption, text: Dataset Generation Pipeline}
+      type: Label
     - components: []
       layout_properties: {grid_position: 'OGNZIQ,BQHTUN'}
       name: data_den_text
@@ -38,6 +42,32 @@ components:
         spacing:
           padding: [null, null, null, 13]
       type: RichText
+    - components: []
+      layout_properties: {grid_position: 'GKBUWS,MIMXLK'}
+      name: report_body_2
+      properties:
+        content: |-
+          <pre><code class="language-python">
+          X, Y, table = generate_connect4_dataset(
+              num_games=1500,
+              mcts_skill=1000,
+              num_random_opening_moves=4,
+              checkpoint_path="c4_ckpt5.pkl",
+              checkpoint_every=25,
+              strict_plus_only=False,
+              min_agreement=0.45,
+              augment_symmetry=True,
+              seed=42,
+              verbose=True
+          )
+          </code></pre>
+        format: restricted_html
+        role: report-body
+      type: RichText
+    - layout_properties: {grid_position: 'GJVSPD,IXTPDN'}
+      name: caption_2
+      properties: {role: caption, text: 'Board Encoding(Current Player Representation) '}
+      type: Label
     - layout_properties: {grid_position: 'LPUCRU,LCOUGH'}
       name: rich_text_4
       properties:
@@ -47,36 +77,36 @@ components:
         spacing:
           padding: [null, null, null, 13]
       type: RichText
-    - layout_properties: {grid_position: 'SQBMWO,MHHGDS'}
-      name: report_body_2
+    - layout_properties: {grid_position: 'QWEELL,ZAQMZN'}
+      name: report_body_3
       properties:
-        content: |-
-          <div style="
-            background:#f4f7f9;
-            border:1px solid #dbe3e8;
-            border-radius:10px;
-            padding:16px;
-            font-family: 'Courier New', monospace;
-            font-size:14px;
-            line-height:1.5;
-            overflow-x:auto;
-          ">
-          X, Y, table = generate_connect4_dataset(
-              num_games=1500,
-              mcts_skill=1000,
-              num_random_opening_moves=4,
-              checkpoint_path="/content/drive/MyDrive/connect4/c4_ckpt5.pkl",
-              checkpoint_every=25,
-              strict_plus_only=False,
-              min_agreement=0.45,
-              augment_symmetry=True,
-              seed=42,
-              verbose=True
-          )
-          </div>
+        content: |
+          <pre><code class="language-python">
+          def encode_6x7x2_current_player(board, color):
+              """
+              Converts board to canonical 6x7x2 tensor
+              Channel 0 = current player's discs
+              Channel 1 = opponent discs
+              """
+
+              if color == "plus":
+                  current, opponent = 1, -1
+              else:
+                  current, opponent = -1, 1
+
+              encoded = np.zeros((6, 7, 2), dtype=np.float32)
+              encoded[:, :, 0] = (board == current)
+              encoded[:, :, 1] = (board == opponent)
+
+              return encoded
+          </code></pre>
         format: restricted_html
         role: report-body
       type: RichText
+    - layout_properties: {grid_position: 'QWHQQQ,BPXRAK'}
+      name: caption_1
+      properties: {role: caption, text: Symmetry Augmentation + Label Adjustment}
+      type: Label
     - data_bindings: []
       event_bindings: {}
       layout_properties: {grid_position: 'XQWEVP,VSTNRA'}
@@ -91,6 +121,25 @@ components:
         spacing:
           padding: [null, null, null, 13]
         tooltip: ''
+      type: RichText
+    - layout_properties: {grid_position: 'JYYLJB,CIAUVR'}
+      name: report_body_9
+      properties:
+        content: |-
+          <pre><code class="language-python">
+          def augment_with_symmetry(board_tensor, label):
+              """
+              Adds horizontal mirror augmentation.
+              Column labels must be flipped.
+              """
+
+              flipped_board = np.flip(board_tensor, axis=1)
+              flipped_label = 6 - label   # mirror column index
+
+              return flipped_board, flipped_label
+          </code></pre>
+        format: restricted_html
+        role: report-body
       type: RichText
     layout_properties: {grid_position: 'IJPOSL,EMJLFU'}
     name: outlined_card_5
