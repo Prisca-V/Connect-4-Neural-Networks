@@ -75,6 +75,6 @@ services:
 - client_config: {allow_signup: false, confirm_email: false, enable_automatically: true, use_email: true}
   server_config: {user_table: users}
   source: /runtime/services/anvil/users.yml
-startup: {module: Form1_copy, type: form}
+startup: {module: Homepage, type: form}
 startup_form: null
 uplink_visible: true
