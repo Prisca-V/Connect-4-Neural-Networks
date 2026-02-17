@@ -1608,3 +1608,22 @@ body {
   margin: 0 !important;
   border: none !important;
   flex: none !important;
+  /* Fix for forms without custom HTML template */
+  html body .left-nav,
+  html body .left-nav-placeholder,
+  html body .nav-shield {
+    display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+  }
+
+  html body .nav-holder {
+    display: block !important;
+  }
+
+  html body .content {
+    margin-left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }

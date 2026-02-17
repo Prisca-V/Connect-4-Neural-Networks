@@ -690,6 +690,6 @@ components:
   properties: {background: '', col_widths: '{}', role: game-bg}
   type: ColumnPanel
 container:
-  properties: {html: '@theme:standard-page.html', role: game-bg}
+  properties: {html: '@theme:new_file.html', role: game-bg}
   type: HtmlTemplate
 is_package: true

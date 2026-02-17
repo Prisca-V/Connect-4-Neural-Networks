@@ -15,6 +15,6 @@ class Homepage(HomepageTemplate):
 
   @handle("Play_game", "click")
   def Play_game_click(self, **event_args):
-    open_form('Form1')
+    open_form('Form1_copy')
     pass
 

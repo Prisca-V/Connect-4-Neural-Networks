@@ -492,7 +492,7 @@ components:
     name: test_health
     properties: {enabled: false, text: button_8, visible: false}
     type: Button
-  layout_properties: {full_width_row: true, grid_position: 'AVRHQV,NMHPYW'}
+  layout_properties: {grid_position: 'AVRHQV,GZLUBX'}
   name: column_panel_1
   properties: {background: 'theme:On Primary Container', border: '', role: game-bg}
   type: ColumnPanel
