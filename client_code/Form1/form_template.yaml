@@ -498,7 +498,7 @@ components:
   type: ColumnPanel
 container:
   properties:
-    background: theme:On Primary Container
+    background: ''
     border: ''
     role: game-bg
     spacing:
